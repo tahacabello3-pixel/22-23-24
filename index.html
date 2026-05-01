@@ -1,1088 +1,365 @@
-<!DOCTYPE html><html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#3b82f6" />
-  <title>Pharma Pro – Yearwise Questions</title>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Pharma Pro – Yearwise Questions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
+  <style>
     :root {
-      --bg: #f5f7fb;
-      --surface: rgba(255,255,255,.86);
-      --surface-strong: #ffffff;
-      --surface-soft: rgba(255,255,255,.72);
-      --border: rgba(15, 23, 42, .08);
-      --text: #0f172a;
-      --muted: #64748b;
-      --primary: #3b82f6;
-      --primary-2: #2563eb;
-      --success: #10b981;
-      --danger: #ef4444;
-      --warning: #f59e0b;
-      --shadow: 0 10px 30px rgba(15, 23, 42, .08);
-      --shadow-2: 0 16px 40px rgba(15, 23, 42, .12);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
-      --container: 1200px;
-      --header-h: 76px;
-      --tap: 44px;
-      --ease: cubic-bezier(.2,.8,.2,1);
+      --bg:#f5f7fb; --surface:rgba(255,255,255,.86); --surface-strong:#fff; --border:rgba(15,23,42,.08);
+      --text:#0f172a; --muted:#64748b; --primary:#3b82f6; --primary2:#2563eb; --success:#10b981; --danger:#ef4444;
+      --warning:#f59e0b; --shadow:0 10px 30px rgba(15,23,42,.08); --shadow2:0 16px 40px rgba(15,23,42,.12);
+      --radius-xl:28px; --radius-lg:22px; --radius-md:16px; --tap:44px;
     }
-
     [data-theme="dark"] {
-      --bg: #0b1120;
-      --surface: rgba(15, 23, 42, .78);
-      --surface-strong: #111827;
-      --surface-soft: rgba(15, 23, 42, .65);
-      --border: rgba(255,255,255,.08);
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --shadow: 0 14px 36px rgba(0,0,0,.35);
-      --shadow-2: 0 18px 48px rgba(0,0,0,.45);
+      --bg:#0b1120; --surface:rgba(15,23,42,.78); --surface-strong:#111827; --border:rgba(255,255,255,.08);
+      --text:#f8fafc; --muted:#94a3b8; --shadow:0 14px 36px rgba(0,0,0,.35); --shadow2:0 18px 48px rgba(0,0,0,.45);
     }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-    }
-
+    * { box-sizing:border-box; }
+    html { -webkit-text-size-adjust:100%; text-size-adjust:100%; scroll-behavior:smooth; }
     body {
-      margin: 0;
-      min-height: 100svh;
-      font-family: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 30%),
-        radial-gradient(circle at top right, rgba(16,185,129,.10), transparent 28%),
-        var(--bg);
-      color: var(--text);
-      overflow-x: clip;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      padding-bottom: env(safe-area-inset-bottom);
-      touch-action: manipulation;
-    }
-
-    body.no-scroll {
-      overflow: hidden;
-    }
-
-    img, svg, video, canvas {
-      display: block;
-      max-width: 100%;
-    }
-
-    button, input, textarea, select {
-      font: inherit;
-      color: inherit;
-    }
-
-    input, textarea {
-      font-size: 16px; /* prevents iOS zoom */
-    }
-
-    button {
-      border: 0;
-      background: none;
-      padding: 0;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    ::selection {
-      background: rgba(59,130,246,.22);
-    }
-
-    .app {
-      min-height: 100svh;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-    }
-
-    .container {
-      width: min(var(--container), calc(100% - 2rem));
-      margin-inline: auto;
-    }
-
-    .glass,
-    .card,
-    .panel,
-    .modal__content,
-    .topbar {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: max(.75rem, env(safe-area-inset-top)) 0 .75rem;
-      border-left: 0;
-      border-right: 0;
-      border-top: 0;
-    }
-
-    .topbar__inner {
-      width: min(var(--container), calc(100% - 1rem));
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .75rem;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: .8rem;
-      min-height: var(--tap);
-      padding-inline: .25rem;
-      font-family: Poppins, sans-serif;
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
-      font-weight: 800;
-      letter-spacing: -.02em;
-      color: var(--text);
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-    }
-
-    .brand__icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--primary), #60a5fa);
-      color: white;
-      box-shadow: 0 10px 20px rgba(59,130,246,.28);
-      flex: 0 0 auto;
-    }
-
-    .toolbar {
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .search {
-      position: relative;
-      min-width: min(100%, 260px);
-      flex: 1 1 260px;
-    }
-
-    .search input {
-      width: 100%;
-      min-height: var(--tap);
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--surface-strong);
-      padding: .8rem 1rem .8rem 2.65rem;
-      outline: none;
-      transition: border-color .2s var(--ease), box-shadow .2s var(--ease), transform .2s var(--ease);
-    }
-
-    .search input:focus-visible {
-      border-color: rgba(59,130,246,.55);
-      box-shadow: 0 0 0 4px rgba(59,130,246,.14);
-    }
-
-    .search__icon {
-      position: absolute;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--muted);
-      pointer-events: none;
-    }
-
-    .segmented {
-      display: inline-flex;
-      align-items: center;
-      gap: .25rem;
-      padding: .25rem;
-      border-radius: 999px;
-      background: var(--surface-soft);
-      border: 1px solid var(--border);
-      min-height: var(--tap);
-    }
-
-    .segmented__btn {
-      min-height: 38px;
-      padding: .5rem .95rem;
-      border-radius: 999px;
-      color: var(--muted);
-      font-weight: 700;
-      transition: transform .2s var(--ease), background .2s var(--ease), color .2s var(--ease);
-      touch-action: manipulation;
-    }
-
-    .segmented__btn.is-active {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 8px 18px rgba(59,130,246,.24);
-    }
-
-    .icon-btn,
-    .text-btn {
-      min-height: var(--tap);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: var(--surface-strong);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: .55rem;
-      padding: .75rem 1rem;
-      font-weight: 700;
-      line-height: 1;
-      transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease), color .18s var(--ease), border-color .18s var(--ease), opacity .18s var(--ease);
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-    }
-
-    .icon-btn {
-      width: var(--tap);
-      padding: 0;
-      flex: 0 0 auto;
-    }
-
-    .text-btn.primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      color: white;
-      border-color: transparent;
-    }
-
-    .icon-btn:disabled,
-    .text-btn:disabled,
-    .segmented__btn:disabled {
-      opacity: .52;
-      cursor: not-allowed;
-      transform: none !important;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      .icon-btn:hover:not(:disabled),
-      .text-btn:hover:not(:disabled),
-      .segmented__btn:hover:not(:disabled),
-      .year-card:hover,
-      .topic-item:hover,
-      .nav-box:hover:not(:disabled) {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-2);
-      }
-
-      .text-btn.primary:hover:not(:disabled) {
-        filter: brightness(.98);
-      }
-    }
-
-    .icon-btn:active:not(:disabled),
-    .text-btn:active:not(:disabled),
-    .segmented__btn:active:not(:disabled),
-    .year-card:active,
-    .topic-item:active,
-    .nav-box:active {
-      transform: scale(.98);
-    }
-
-    main {
-      padding: 1.25rem 0 2rem;
-    }
-
-    .view {
-      display: none;
-      animation: fadeUp .32s var(--ease) both;
-    }
-
-    .view.is-active {
-      display: block;
-    }
-
-    .grid-home {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-      gap: 1rem;
-      align-items: stretch;
-    }
-
-    .year-card {
-      padding: 1.25rem;
-      border-radius: var(--radius-xl);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      min-height: 180px;
-      display: grid;
-      gap: .75rem;
-      align-content: center;
-      text-align: start;
-      transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
-      touch-action: manipulation;
-    }
-
-    .year-card__top {
-      display: flex;
-      align-items: center;
-      gap: .9rem;
-    }
-
-    .year-card__icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      color: white;
-      background: linear-gradient(135deg, var(--primary), #60a5fa);
-      flex: 0 0 auto;
-    }
-
-    .year-card h2,
-    .section-title {
-      margin: 0;
-      font-family: Poppins, sans-serif;
-      font-weight: 800;
-      letter-spacing: -.03em;
-    }
-
-    .year-card h2 {
-      font-size: 1.15rem;
-    }
-
-    .year-card p,
-    .helper,
-    .meta {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: .97rem;
-    }
-
-    .shell {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .quiz-bar {
-      padding: 1rem;
-      border-radius: var(--radius-xl);
-      display: grid;
-      gap: .8rem;
-    }
-
-    .quiz-bar__row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .75rem;
-      flex-wrap: wrap;
-    }
-
-    .quiz-bar__title {
-      display: grid;
-      gap: .15rem;
-      min-width: 0;
-    }
-
-    .quiz-bar__title strong {
-      font-size: 1rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .quiz-bar__title span,
-    .timer,
-    .counter {
-      color: var(--muted);
-      font-size: .92rem;
-    }
-
-    .progress {
-      width: 100%;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(100,116,139,.16);
-      overflow: hidden;
-    }
-
-    .progress__fill {
-      width: 0%;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--primary), #22c55e);
-      transition: width .35s var(--ease);
-      will-change: width;
-    }
-
-    .question-card {
-      padding: clamp(1rem, 3vw, 1.5rem);
-      border-radius: var(--radius-xl);
-    }
-
-    .question {
-      margin: 0 0 1rem;
-      font-size: clamp(1.05rem, 2.3vw, 1.25rem);
-      line-height: 1.65;
-      font-weight: 700;
-      letter-spacing: -.01em;
-    }
-
-    .options {
-      display: grid;
-      gap: .75rem;
-    }
-
-    .option {
-      width: 100%;
-      text-align: start;
-      padding: .95rem 1rem;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: var(--surface-strong);
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: .8rem;
-      align-items: start;
-      transition: transform .16s var(--ease), background .16s var(--ease), border-color .16s var(--ease), color .16s var(--ease), opacity .16s var(--ease);
-    }
-
-    .option:focus-visible,
-    .icon-btn:focus-visible,
-    .text-btn:focus-visible,
-    .segmented__btn:focus-visible,
-    .year-card:focus-visible,
-    .topic-item:focus-visible,
-    .nav-box:focus-visible,
-    .modal__close:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(59,130,246,.16);
-      border-color: rgba(59,130,246,.6);
-    }
-
-    .option__key {
-      width: 34px;
-      height: 34px;
-      border-radius: 11px;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      background: rgba(100,116,139,.1);
-      flex: 0 0 auto;
-    }
-
-    .option.is-correct {
-      background: rgba(16,185,129,.12);
-      border-color: rgba(16,185,129,.5);
-      color: var(--text);
-    }
-
-    .option.is-correct .option__key {
-      background: rgba(16,185,129,.18);
-    }
-
-    .option.is-wrong {
-      background: rgba(239,68,68,.12);
-      border-color: rgba(239,68,68,.5);
-      color: var(--text);
-    }
-
-    .option.is-wrong .option__key {
-      background: rgba(239,68,68,.18);
-    }
-
-    .option[disabled] {
-      cursor: not-allowed;
-      opacity: .95;
-    }
-
-    .notes {
-      display: none;
-      width: 100%;
-      min-height: 108px;
-      resize: vertical;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: var(--surface-strong);
-      padding: .9rem 1rem;
-      margin-top: 1rem;
-      outline: none;
-    }
-
-    .notes.is-visible {
-      display: block;
-      animation: fadeIn .18s var(--ease) both;
-    }
-
-    .controls {
-      margin-top: 1rem;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: .75rem;
-      align-items: center;
-    }
-
-    .controls__group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .55rem;
-      justify-content: center;
-    }
-
-    .controls__left {
-      justify-content: flex-start;
-    }
-
-    .controls__right {
-      justify-content: flex-end;
-    }
-
-    .study-header {
-      padding: 1rem;
-      border-radius: var(--radius-xl);
-      display: grid;
-      gap: .9rem;
-    }
-
-    .study-header__row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .75rem;
-      flex-wrap: wrap;
-    }
-
-    .study-list {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .study-card {
-      padding: 1.25rem;
-      border-radius: var(--radius-xl);
-    }
-
-    .study-options {
-      display: grid;
-      gap: .6rem;
-      margin-top: 1rem;
-    }
-
-    .study-option {
-      padding: .85rem .95rem;
-      border-radius: 16px;
-      border: 1px solid transparent;
-      background: rgba(100,116,139,.06);
-      line-height: 1.55;
-    }
-
-    .study-option strong {
-      font-weight: 800;
-    }
-
-    .study-option.is-answer {
-      background: rgba(16,185,129,.12);
-      border-color: rgba(16,185,129,.4);
-    }
-
-    .study-actions {
-      display: flex;
-      gap: .6rem;
-      flex-wrap: wrap;
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      background: rgba(2,6,23,.62);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 1000;
-    }
-
-    .modal.is-open {
-      display: flex;
-      animation: fadeIn .18s var(--ease) both;
-    }
-
-    .modal__content {
-      position: relative;
-      width: min(100%, 680px);
-      max-height: min(88svh, 920px);
-      overflow: auto;
-      border-radius: 30px;
-      padding: 1.1rem;
-      animation: scaleIn .18s var(--ease) both;
-    }
-
-    .modal__close {
-      position: sticky;
-      top: 0;
-      margin-left: auto;
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: var(--surface-strong);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      z-index: 1;
-    }
-
-    .modal__body {
-      padding: .25rem .25rem .5rem;
-    }
-
-    .topic-list {
-      display: grid;
-      gap: .75rem;
-      margin-top: 1rem;
-    }
-
-    .topic-item {
-      min-height: 58px;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: var(--surface-strong);
-      padding: .9rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      font-weight: 700;
-      transition: transform .16s var(--ease), background .16s var(--ease), color .16s var(--ease), border-color .16s var(--ease);
-    }
-
-    .pill {
-      padding: .3rem .65rem;
-      border-radius: 999px;
-      background: rgba(100,116,139,.1);
-      font-size: .84rem;
-      color: var(--muted);
-      font-weight: 700;
-      flex: 0 0 auto;
-    }
-
-    .nav-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
-      gap: .5rem;
-      margin-top: 1rem;
-    }
-
-    .nav-box {
-      aspect-ratio: 1;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: var(--surface-strong);
-      font-weight: 800;
-      transition: transform .16s var(--ease), background .16s var(--ease), color .16s var(--ease), border-color .16s var(--ease);
-    }
-
-    .nav-box.is-current {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
-    .nav-box.is-answered {
-      background: rgba(16,185,129,.12);
-      border-color: rgba(16,185,129,.5);
-    }
-
-    .nav-box.is-wrong {
-      background: rgba(239,68,68,.12);
-      border-color: rgba(239,68,68,.5);
-    }
-
-    .nav-box.is-flagged {
-      box-shadow: inset 0 0 0 2px rgba(245,158,11,.8);
-    }
-
-    .nav-box:disabled {
-      opacity: .85;
-    }
-
-    .results {
-      display: grid;
-      place-items: center;
-      min-height: 55svh;
-    }
-
-    .results__card {
-      width: min(100%, 560px);
-      padding: clamp(1.25rem, 4vw, 2rem);
-      text-align: center;
-      border-radius: 32px;
-    }
-
-    .results__score {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      margin: 1.25rem 0 1.5rem;
-    }
-
-    .metric {
-      padding: 1rem;
-      border-radius: 20px;
-      background: rgba(100,116,139,.06);
-      border: 1px solid var(--border);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 1.55rem;
-      font-family: Poppins, sans-serif;
-      margin-bottom: .2rem;
-    }
-
-    .footer {
-      padding: 1rem 0 calc(1rem + env(safe-area-inset-bottom));
-      color: var(--muted);
-      font-size: .95rem;
-      text-align: center;
-    }
-
-    .footer a {
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 0;
-    }
-
-    .skip-link:focus {
-      left: 1rem;
-      top: 1rem;
-      z-index: 2000;
-      padding: .75rem 1rem;
-      border-radius: 999px;
-      background: var(--surface-strong);
-      box-shadow: var(--shadow);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes scaleIn {
-      from { opacity: 0; transform: scale(.97); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @media (max-width: 900px) {
-      .topbar__inner {
-        align-items: stretch;
-      }
-
-      .toolbar {
-        width: 100%;
-        justify-content: flex-start;
-      }
-
-      .search {
-        flex: 1 1 100%;
-        min-width: 0;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .controls {
-        grid-template-columns: 1fr;
-      }
-
-      .controls__left,
-      .controls__right {
-        justify-content: stretch;
-      }
-
-      .controls .text-btn,
-      .controls .icon-btn {
-        flex: 1 1 auto;
-      }
-
-      .results__score {
-        grid-template-columns: 1fr;
-      }
-
-      .brand {
-        font-size: 1.05rem;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .container,
-      .topbar__inner {
-        width: min(var(--container), calc(100% - 1rem));
-      }
-
-      .icon-btn,
-      .text-btn,
-      .segmented__btn {
-        border-radius: 14px;
-      }
-
-      .year-card,
-      .question-card,
-      .study-card,
-      .quiz-bar,
-      .study-header,
-      .results__card,
-      .modal__content {
-        border-radius: 22px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  </style></head>
+      margin:0; min-height:100svh; font-family:"Plus Jakarta Sans",system-ui,sans-serif; color:var(--text); background:
+      radial-gradient(circle at top left, rgba(59,130,246,.16), transparent 30%),
+      radial-gradient(circle at top right, rgba(16,185,129,.10), transparent 28%), var(--bg);
+      overflow-x:clip; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; padding-bottom:env(safe-area-inset-bottom);
+    }
+    body.no-scroll { overflow:hidden; }
+    input, textarea, button { font:inherit; color:inherit; }
+    input, textarea { font-size:16px; }
+    button { border:0; background:none; padding:0; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+    a { color:inherit; text-decoration:none; }
+    ::selection { background:rgba(59,130,246,.22); }
+    .app { min-height:100svh; display:grid; grid-template-rows:auto 1fr auto; }
+    .container { width:min(1200px, calc(100% - 2rem)); margin-inline:auto; }
+    .glass { background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+    .topbar { position:sticky; top:0; z-index:100; padding:max(.75rem, env(safe-area-inset-top)) 0 .75rem; border-left:0; border-right:0; border-top:0; }
+    .topbar__inner { width:min(1200px, calc(100% - 1rem)); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:.75rem; flex-wrap:wrap; }
+    .brand { display:inline-flex; align-items:center; gap:.8rem; min-height:var(--tap); padding-inline:.25rem; font-family:Poppins,sans-serif; font-size:clamp(1.05rem,2vw,1.35rem); font-weight:800; letter-spacing:-.02em; }
+    .brand__icon { width:40px; height:40px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg,var(--primary),#60a5fa); color:#fff; box-shadow:0 10px 20px rgba(59,130,246,.28); }
+    .toolbar { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; justify-content:flex-end; }
+    .search { position:relative; min-width:min(100%,260px); flex:1 1 260px; }
+    .search input { width:100%; min-height:var(--tap); border-radius:999px; border:1px solid var(--border); background:var(--surface-strong); padding:.8rem 1rem .8rem 2.65rem; outline:none; }
+    .search input:focus-visible, .icon-btn:focus-visible, .text-btn:focus-visible, .segmented__btn:focus-visible, .year-card:focus-visible, .topic-item:focus-visible, .nav-box:focus-visible, .modal__close:focus-visible {
+      outline:none; box-shadow:0 0 0 4px rgba(59,130,246,.16); border-color:rgba(59,130,246,.6);
+    }
+    .search__icon { position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:var(--muted); pointer-events:none; }
+    .segmented { display:inline-flex; align-items:center; gap:.25rem; padding:.25rem; border-radius:999px; background:var(--surface); border:1px solid var(--border); min-height:var(--tap); }
+    .segmented__btn { min-height:38px; padding:.5rem .95rem; border-radius:999px; color:var(--muted); font-weight:700; transition:transform .18s ease, background .18s ease, color .18s ease; }
+    .segmented__btn.is-active { background:var(--primary); color:#fff; box-shadow:0 8px 18px rgba(59,130,246,.24); }
+    .icon-btn, .text-btn { min-height:var(--tap); border-radius:16px; border:1px solid var(--border); background:var(--surface-strong); display:inline-flex; align-items:center; justify-content:center; gap:.55rem; padding:.75rem 1rem; font-weight:700; transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease, opacity .18s ease; user-select:none; -webkit-user-select:none; touch-action:manipulation; }
+    .icon-btn { width:var(--tap); padding:0; }
+    .text-btn.primary { background:linear-gradient(135deg,var(--primary),var(--primary2)); color:#fff; border-color:transparent; }
+    .icon-btn:disabled, .text-btn:disabled, .segmented__btn:disabled { opacity:.52; cursor:not-allowed; transform:none !important; }
+    @media (hover:hover) and (pointer:fine) {
+      .icon-btn:hover:not(:disabled), .text-btn:hover:not(:disabled), .segmented__btn:hover:not(:disabled), .year-card:hover, .topic-item:hover, .nav-box:hover:not(:disabled) { transform:translateY(-2px); box-shadow:var(--shadow2); }
+    }
+    .icon-btn:active:not(:disabled), .text-btn:active:not(:disabled), .segmented__btn:active:not(:disabled), .year-card:active, .topic-item:active, .nav-box:active { transform:scale(.98); }
+    main { padding:1.25rem 0 2rem; }
+    .view { display:none; animation:fadeUp .32s ease both; }
+    .view.is-active { display:block; }
+    .grid-home { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,220px),1fr)); gap:1rem; }
+    .year-card { padding:1.25rem; border-radius:var(--radius-xl); background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow); min-height:180px; display:grid; gap:.75rem; align-content:center; text-align:start; }
+    .year-card__top { display:flex; align-items:center; gap:.9rem; }
+    .year-card__icon { width:54px; height:54px; border-radius:18px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--primary),#60a5fa); }
+    .year-card h2, .section-title { margin:0; font-family:Poppins,sans-serif; font-weight:800; letter-spacing:-.03em; }
+    .year-card h2 { font-size:1.15rem; }
+    .year-card p, .helper, .meta { margin:0; color:var(--muted); line-height:1.55; font-size:.97rem; }
+    .shell { display:grid; gap:1rem; }
+    .quiz-bar, .study-header, .question-card, .study-card, .results__card { border-radius:var(--radius-xl); }
+    .quiz-bar, .study-header { padding:1rem; }
+    .quiz-bar__row, .study-header__row { display:flex; align-items:center; justify-content:space-between; gap:.75rem; flex-wrap:wrap; }
+    .quiz-bar__title { display:grid; gap:.15rem; min-width:0; }
+    .quiz-bar__title strong { font-size:1rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .progress { width:100%; height:8px; border-radius:999px; background:rgba(100,116,139,.16); overflow:hidden; }
+    .progress__fill { width:0%; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--primary),#22c55e); transition:width .35s ease; }
+    .question-card { padding:clamp(1rem, 3vw, 1.5rem); }
+    .question { margin:0 0 1rem; font-size:clamp(1.05rem,2.3vw,1.25rem); line-height:1.65; font-weight:700; letter-spacing:-.01em; }
+    .options { display:grid; gap:.75rem; }
+    .option { width:100%; text-align:start; padding:.95rem 1rem; border-radius:18px; border:1px solid var(--border); background:var(--surface-strong); display:grid; grid-template-columns:34px 1fr; gap:.8rem; align-items:start; transition:transform .16s ease, background .16s ease, border-color .16s ease, color .16s ease; }
+    .option__key { width:34px; height:34px; border-radius:11px; display:grid; place-items:center; font-weight:800; background:rgba(100,116,139,.1); }
+    .option.is-correct { background:rgba(16,185,129,.12); border-color:rgba(16,185,129,.5); }
+    .option.is-wrong { background:rgba(239,68,68,.12); border-color:rgba(239,68,68,.5); }
+    .notes { display:none; width:100%; min-height:108px; resize:vertical; border-radius:18px; border:1px solid var(--border); background:var(--surface-strong); padding:.9rem 1rem; margin-top:1rem; outline:none; }
+    .notes.is-visible { display:block; animation:fadeIn .18s ease both; }
+    .controls { margin-top:1rem; display:grid; grid-template-columns:1fr auto 1fr; gap:.75rem; align-items:center; }
+    .controls__group { display:flex; flex-wrap:wrap; gap:.55rem; justify-content:center; }
+    .controls__left { justify-content:flex-start; }
+    .controls__right { justify-content:flex-end; }
+    .study-list { display:grid; gap:1rem; }
+    .study-card { padding:1.25rem; }
+    .study-options { display:grid; gap:.6rem; margin-top:1rem; }
+    .study-option { padding:.85rem .95rem; border-radius:16px; border:1px solid transparent; background:rgba(100,116,139,.06); line-height:1.55; }
+    .study-option.is-answer { background:rgba(16,185,129,.12); border-color:rgba(16,185,129,.4); }
+    .study-actions { display:flex; gap:.6rem; flex-wrap:wrap; }
+    .modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:1rem; background:rgba(2,6,23,.62); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); z-index:1000; }
+    .modal.is-open { display:flex; animation:fadeIn .18s ease both; }
+    .modal__content { position:relative; width:min(100%,680px); max-height:min(88svh,920px); overflow:auto; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow); padding:1.1rem; border-radius:30px; animation:scaleIn .18s ease both; }
+    .modal__close { position:sticky; top:0; margin-left:auto; display:grid; place-items:center; width:42px; height:42px; border-radius:14px; background:var(--surface-strong); border:1px solid var(--border); box-shadow:var(--shadow); z-index:1; }
+    .modal__body { padding:.25rem .25rem .5rem; }
+    .topic-list { display:grid; gap:.75rem; margin-top:1rem; }
+    .topic-item { min-height:58px; border-radius:18px; border:1px solid var(--border); background:var(--surface-strong); padding:.9rem 1rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; font-weight:700; }
+    .pill { padding:.3rem .65rem; border-radius:999px; background:rgba(100,116,139,.1); font-size:.84rem; color:var(--muted); font-weight:700; }
+    .nav-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(46px, 1fr)); gap:.5rem; margin-top:1rem; }
+    .nav-box { aspect-ratio:1; border-radius:14px; border:1px solid var(--border); background:var(--surface-strong); font-weight:800; }
+    .nav-box.is-current { background:var(--primary); color:#fff; border-color:var(--primary); }
+    .nav-box.is-answered { background:rgba(16,185,129,.12); border-color:rgba(16,185,129,.5); }
+    .nav-box.is-wrong { background:rgba(239,68,68,.12); border-color:rgba(239,68,68,.5); }
+    .nav-box.is-flagged { box-shadow:inset 0 0 0 2px rgba(245,158,11,.8); }
+    .results { display:grid; place-items:center; min-height:55svh; }
+    .results__card { width:min(100%,560px); padding:clamp(1.25rem,4vw,2rem); text-align:center; }
+    .results__score { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1.25rem 0 1.5rem; }
+    .metric { padding:1rem; border-radius:20px; background:rgba(100,116,139,.06); border:1px solid var(--border); }
+    .metric strong { display:block; font-size:1.55rem; font-family:Poppins,sans-serif; margin-bottom:.2rem; }
+    .footer { padding:1rem 0 calc(1rem + env(safe-area-inset-bottom)); color:var(--muted); font-size:.95rem; text-align:center; }
+    .footer a { color:var(--primary); font-weight:700; }
+    .skip-link { position:absolute; left:-9999px; top:0; }
+    .skip-link:focus { left:1rem; top:1rem; z-index:2000; padding:.75rem 1rem; border-radius:999px; background:var(--surface-strong); box-shadow:var(--shadow); }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes scaleIn { from { opacity:0; transform:scale(.97); } to { opacity:1; transform:scale(1); } }
+    @media (max-width:900px) {
+      .topbar__inner { align-items:stretch; }
+      .toolbar { width:100%; justify-content:flex-start; }
+      .search { flex:1 1 100%; min-width:0; }
+    }
+    @media (max-width:720px) {
+      .controls { grid-template-columns:1fr; }
+      .controls__left, .controls__right { justify-content:stretch; }
+      .controls .text-btn, .controls .icon-btn { flex:1 1 auto; }
+      .results__score { grid-template-columns:1fr; }
+    }
+    @media (max-width:420px) {
+      .container, .topbar__inner { width:min(1200px, calc(100% - 1rem)); }
+      .icon-btn, .text-btn, .segmented__btn { border-radius:14px; }
+      .year-card, .question-card, .study-card, .quiz-bar, .study-header, .results__card, .modal__content { border-radius:22px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+    }
+  </style>
+</head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>  <div class="app">
-    <header class="topbar" role="banner">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app">
+    <header class="topbar glass" role="banner">
       <div class="topbar__inner">
         <button class="brand" type="button" id="homeBtn" aria-label="Go to home">
           <span class="brand__icon" aria-hidden="true"><i class="fa-solid fa-pills"></i></span>
           <span>Pharma Pro</span>
-        </button><div class="toolbar" role="navigation" aria-label="Main controls">
-      <label class="search" aria-label="Search questions">
-        <i class="fa-solid fa-magnifying-glass search__icon" aria-hidden="true"></i>
-        <input id="searchInput" type="search" inputmode="search" placeholder="Search questions..." autocomplete="off" autocapitalize="off" spellcheck="false" disabled>
-      </label>
-
-      <div class="segmented" role="tablist" aria-label="View mode">
-        <button class="segmented__btn is-active" id="quizModeBtn" type="button" role="tab" aria-selected="true">Quiz</button>
-        <button class="segmented__btn" id="studyModeBtn" type="button" role="tab" aria-selected="false">Study</button>
-      </div>
-
-      <button class="icon-btn" id="shuffleBtn" type="button" aria-label="Shuffle questions" disabled><i class="fa-solid fa-shuffle" aria-hidden="true"></i></button>
-      <button class="icon-btn" id="bookmarkListBtn" type="button" aria-label="Open bookmarks"><i class="fa-solid fa-bookmark" aria-hidden="true"></i></button>
-      <button class="icon-btn" id="wrongListBtn" type="button" aria-label="Review wrong answers"><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i></button>
-      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-  <div class="container shell">
-    <section class="view is-active" id="homeView" aria-label="Select year">
-      <div class="grid-home" id="yearGrid"></div>
-    </section>
-
-    <section class="view" id="quizView" aria-label="Quiz view">
-      <div class="quiz-bar glass">
-        <div class="quiz-bar__row">
-          <div class="quiz-bar__title">
-            <strong id="quizTitle">Topic</strong>
-            <span id="quizSubTitle">Choose a year and topic to start</span>
+        </button>
+        <div class="toolbar" role="navigation" aria-label="Main controls">
+          <label class="search" aria-label="Search questions">
+            <i class="fa-solid fa-magnifying-glass search__icon" aria-hidden="true"></i>
+            <input id="searchInput" type="search" inputmode="search" placeholder="Search questions..." autocomplete="off" autocapitalize="off" spellcheck="false" disabled>
+          </label>
+          <div class="segmented" role="tablist" aria-label="View mode">
+            <button class="segmented__btn is-active" id="quizModeBtn" type="button" role="tab" aria-selected="true">Quiz</button>
+            <button class="segmented__btn" id="studyModeBtn" type="button" role="tab" aria-selected="false">Study</button>
           </div>
-          <div class="quiz-bar__meta">
-            <span class="timer" id="quizTimer"><i class="fa-regular fa-clock"></i> 00:00</span>
-            <span class="counter" id="quizCounter">0 / 0</span>
-          </div>
-        </div>
-        <div class="progress" id="quizProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-          <div class="progress__fill" id="quizProgress"></div>
+          <button class="icon-btn" id="shuffleBtn" type="button" aria-label="Shuffle questions" disabled><i class="fa-solid fa-shuffle" aria-hidden="true"></i></button>
+          <button class="icon-btn" id="bookmarkListBtn" type="button" aria-label="Open bookmarks"><i class="fa-solid fa-bookmark" aria-hidden="true"></i></button>
+          <button class="icon-btn" id="wrongListBtn" type="button" aria-label="Review wrong answers"><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i></button>
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
         </div>
       </div>
+    </header>
 
-      <article class="question-card glass">
-        <h2 class="question" id="questionText">Loading...</h2>
-        <div class="options" id="optionsGrid" role="group" aria-label="Answer options"></div>
-        <textarea id="notesInput" class="notes" placeholder="Add your notes here..." aria-label="Question notes"></textarea>
+    <main id="main">
+      <div class="container shell">
+        <section class="view is-active" id="homeView" aria-label="Select year">
+          <div class="grid-home" id="yearGrid"></div>
+        </section>
 
-        <div class="controls">
-          <div class="controls__group controls__left">
-            <button class="text-btn" id="prevBtn" type="button"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Previous</button>
-          </div>
-
-          <div class="controls__group">
-            <button class="icon-btn" id="notesBtn" type="button" aria-label="Toggle notes"><i class="fa-solid fa-note-sticky" aria-hidden="true"></i></button>
-            <button class="icon-btn" id="flagBtn" type="button" aria-label="Flag question"><i class="fa-regular fa-flag" aria-hidden="true"></i></button>
-            <button class="icon-btn" id="saveBtn" type="button" aria-label="Bookmark question"><i class="fa-regular fa-bookmark" aria-hidden="true"></i></button>
-            <button class="icon-btn" id="navBtn" type="button" aria-label="Open navigator"><i class="fa-solid fa-grip" aria-hidden="true"></i></button>
-          </div>
-
-          <div class="controls__group controls__right">
-            <button class="text-btn primary" id="nextBtn" type="button">Next <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <section class="view" id="studyView" aria-label="Study view">
-      <div class="study-header glass">
-        <div class="study-header__row">
-          <div>
-            <h2 class="section-title" id="studyTitle">Topic</h2>
-            <p class="helper">Search, copy, and review questions in a clean study layout.</p>
-          </div>
-          <div class="study-actions">
-            <button class="text-btn" id="copyAllBtn" type="button"><i class="fa-regular fa-copy" aria-hidden="true"></i> Copy All</button>
-            <button class="text-btn" id="exportPdfBtn" type="button"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i> Save PDF</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="study-list" id="studyList"></div>
-    </section>
-
-    <section class="view" id="resultsView" aria-label="Quiz results">
-      <div class="results">
-        <article class="results__card glass">
-          <h2 class="section-title" style="font-size: clamp(1.5rem, 4vw, 2.25rem);">Quiz Completed 🎉</h2>
-          <p class="helper">Nice work. Review your result or return to the home screen.</p>
-
-          <div class="results__score">
-            <div class="metric">
-              <strong id="resultScore">0/0</strong>
-              <span class="meta">Score</span>
+        <section class="view" id="quizView" aria-label="Quiz view">
+          <div class="quiz-bar glass">
+            <div class="quiz-bar__row">
+              <div class="quiz-bar__title">
+                <strong id="quizTitle">Topic</strong>
+                <span id="quizSubTitle">Choose a year and topic to start</span>
+              </div>
+              <div class="quiz-bar__meta">
+                <span class="timer" id="quizTimer"><i class="fa-regular fa-clock"></i> 00:00</span>
+                <span class="counter" id="quizCounter">0 / 0</span>
+              </div>
             </div>
-            <div class="metric">
-              <strong id="resultTime">00:00</strong>
-              <span class="meta">Time</span>
+            <div class="progress" id="quizProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="progress__fill" id="quizProgress"></div>
             </div>
           </div>
 
-          <div class="study-actions" style="justify-content:center;">
-            <button class="text-btn primary" id="goHomeFromResultsBtn" type="button"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</button>
-            <button class="text-btn" id="reviewWrongBtn" type="button"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Review Mistakes</button>
+          <article class="question-card glass">
+            <h2 class="question" id="questionText">Loading...</h2>
+            <div class="options" id="optionsGrid" role="group" aria-label="Answer options"></div>
+            <textarea id="notesInput" class="notes" placeholder="Add your notes here..." aria-label="Question notes"></textarea>
+
+            <div class="controls">
+              <div class="controls__group controls__left">
+                <button class="text-btn" id="prevBtn" type="button"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Previous</button>
+              </div>
+              <div class="controls__group">
+                <button class="icon-btn" id="notesBtn" type="button" aria-label="Toggle notes"><i class="fa-solid fa-note-sticky" aria-hidden="true"></i></button>
+                <button class="icon-btn" id="flagBtn" type="button" aria-label="Flag question"><i class="fa-regular fa-flag" aria-hidden="true"></i></button>
+                <button class="icon-btn" id="saveBtn" type="button" aria-label="Bookmark question"><i class="fa-regular fa-bookmark" aria-hidden="true"></i></button>
+                <button class="icon-btn" id="navBtn" type="button" aria-label="Open navigator"><i class="fa-solid fa-grip" aria-hidden="true"></i></button>
+              </div>
+              <div class="controls__group controls__right">
+                <button class="text-btn primary" id="nextBtn" type="button">Next <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="studyView" aria-label="Study view">
+          <div class="study-header glass">
+            <div class="study-header__row">
+              <div>
+                <h2 class="section-title" id="studyTitle">Topic</h2>
+                <p class="helper">Search, copy, and review questions in a clean study layout.</p>
+              </div>
+              <div class="study-actions">
+                <button class="text-btn" id="copyAllBtn" type="button"><i class="fa-regular fa-copy" aria-hidden="true"></i> Copy All</button>
+                <button class="text-btn" id="exportPdfBtn" type="button"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i> Save PDF</button>
+              </div>
+            </div>
           </div>
-        </article>
+          <div class="study-list" id="studyList"></div>
+        </section>
+
+        <section class="view" id="resultsView" aria-label="Quiz results">
+          <div class="results">
+            <article class="results__card glass">
+              <h2 class="section-title" style="font-size:clamp(1.5rem,4vw,2.25rem);">Quiz Completed 🎉</h2>
+              <p class="helper">Nice work. Review your result or return to the home screen.</p>
+              <div class="results__score">
+                <div class="metric"><strong id="resultScore">0/0</strong><span class="meta">Score</span></div>
+                <div class="metric"><strong id="resultTime">00:00</strong><span class="meta">Time</span></div>
+              </div>
+              <div class="study-actions" style="justify-content:center;">
+                <button class="text-btn primary" id="goHomeFromResultsBtn" type="button"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</button>
+                <button class="text-btn" id="reviewWrongBtn" type="button"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Re-Quiz Mistakes</button>
+                <button class="text-btn" id="showResultsBtn" type="button"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Review Answers</button>
+              </div>
+            </article>
+          </div>
+        </section>
       </div>
-    </section>
-  </div>
-</main>
+    </main>
 
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    Created by <a href="https://t.me/zik0d" target="_blank" rel="noopener noreferrer">@zik0d</a> | Join our channel: <a href="https://t.me/ti_6idz" target="_blank" rel="noopener noreferrer">@ti_6idz</a>
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        Created by <a href="https://t.me/zik0d" target="_blank" rel="noopener noreferrer">@zik0d</a> | Join our channel: <a href="https://t.me/ti_6idz" target="_blank" rel="noopener noreferrer">@ti_6idz</a>
+      </div>
+    </footer>
   </div>
-</footer>
 
-  </div>  <div class="modal" id="topicModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="topicModalTitle">
-    <div class="modal__content">
+  <div class="modal" id="topicModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="topicModalTitle">
+    <div class="modal__content glass">
       <button class="modal__close" id="closeTopicModalBtn" type="button" aria-label="Close topic modal"><i class="fa-solid fa-xmark"></i></button>
       <div class="modal__body">
         <h2 class="section-title" id="topicModalTitle">Select Topic</h2>
         <div class="topic-list" id="topicList"></div>
       </div>
     </div>
-  </div>  <div class="modal" id="navigatorModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="navigatorModalTitle">
-    <div class="modal__content">
+  </div>
+
+  <div class="modal" id="navigatorModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="navigatorModalTitle">
+    <div class="modal__content glass">
       <button class="modal__close" id="closeNavigatorModalBtn" type="button" aria-label="Close navigator"><i class="fa-solid fa-xmark"></i></button>
       <div class="modal__body">
         <h2 class="section-title" id="navigatorModalTitle">Question Navigator</h2>
         <div class="nav-grid" id="navGrid"></div>
       </div>
     </div>
-  </div>  <script>
+  </div>
+
+  <script id="questions-data" type="application/json">[{"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Acetaminophen is:", "options": ["Generic name", "Trade name", "Chemical name", "Scientific name", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Adol is generic name.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Adverse or beneficial interaction is:", "options": ["Different", "Similar", "Mixed", "All of the above", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Albumin bind mainly acidic drugs.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Aspirin is synthetic compound.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Below a minimum threshold, no effect.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Binding drugs are not readily filtered through glomerulus.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Bioequivalence is similar bioavailability.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Competition between drugs for the carrier lead to:", "options": ["Increase action", "Increase absorption", "Drug-drug interaction", "(a and c)", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Conversion of acetylated metabolite to acetyl hydralazine lead to nephrotoxicity.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Dehalogenation is the most common conjugation reaction.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Dichlophenazone is:", "options": ["Increase warfarine activity", "Decrease warfarine activity", "Decrease aspirin activity", "(b and c)", "None"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Different pharmacological response to the same concentration is pharmacodynamic deviation.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "First pass metabolism mainly limit efficacy.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "First-pass metabolism is:", "options": ["Decrease bioavailability", "Increase bioavailability", "Not affect bioavailability", "Increase pharmacological action", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Glucuronidation is the most common:", "options": ["Phase-I reaction", "Phase-II metabolism", "Phase-III metabolism", "All above", "None above"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Grapefruit inhibit most of microsomal enzymes and lead to:", "options": ["Decrease metabolism", "Increase metabolism", "Flushing", "All of above", "None of the above"], "ans": 4}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Haemolysis may occur by:", "options": ["Slow injection", "Intermediate injection", "Rapid injection", "All of the above", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Hypnosedatives are:", "options": ["Decrease alcohol action", "Increase Prostaglandins", "Increase alcohol action", "Alcohol antagonist", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "If in doubt, don't give the drugs together.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "In some cases metabolic reactions generate:", "options": ["More polar metabolites", "Inactive metabolites", "Toxic effects", "All of the above", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Inhalation can produce rapid local effect.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Intraperitoneal injection commonly used in:", "options": ["Human study", "Animal study", "(a and b)", "Pediatrics", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Isoprenaline is competitively antagonized by:", "options": ["Aspirin", "Panadol", "Acetoprolol", "Verapamil", "None of the above"], "ans": 4}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Many hydrophobic drugs conjugates (particularly glucuronide).", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Maximal response of drug is:", "options": ["Potency", "ED50", "LD50", "Efficacy", "None of the above"], "ans": 3}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Metoclopramide is:", "options": ["Reduce Digoxin absorption", "Reduce Propantheline absorption", "Increase Digoxin absorption", "All of the above", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Migraine causes gastric stasis.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Migraine is:", "options": ["Decrease distribution", "Increase metabolism", "Decrease absorption", "Increase absorption", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Neomycin causes:", "options": ["Malabsorption syndrome", "Decrease GIT motility", "Delays gastric emptying", "All of the above", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Oral route is safe due to:", "options": ["Fast absorption", "Fast metabolism", "Slow elimination", "Slow absorption", "None of the above"], "ans": 3}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Peripheral neuropathy is related to:", "options": ["Slow acetylation", "Intermediate acetylation", "Fast acetylation", "None above", "All above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Potency is effective dose response.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Probenecid reduces:", "options": ["Excretion of Paracetamol", "Excretion of Penicillin", "Absorption of Penicillin", "All of above", "None above"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Propantheline is:", "options": ["Decrease Paracetamol absorption", "Increase Paracetamol absorption", "Decrease aspirin absorption", "All of the above", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Renal excretion of changed drugs plays only a modest role in overall elimination.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Thiazide diuretics:", "options": ["Rise lithium plasma levels", "Inhibit lithium plasma levels", "Not affect lithium", "All of above", "None above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Toxicology is the branch of pharmacology that deals with:", "options": ["Side effects", "Adverse effects", "Elimination", "Pharmacological action", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Warfarin is:", "options": ["Increase bleed with tyramine", "Decrease bleed with phenylbutazone", "Decrease bleed with aspirin", "Increase bleed with azapropazone", "None of the above"], "ans": 3}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Atropine is antidote to:", "options": ["Cholinesterases", "Adrenaline", "Histamine", "All of above", "None of above"], "ans": 4}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Cimetidine is cause impotence in males.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Clonidine is:", "options": ["Prevent premature labour", "Used for hypotension", "Prolonged local anaesthesia", "None of above", "All of above"], "ans": 3}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Dobutamine is:", "options": ["Selective α1-agonist", "Selective α2-agonist", "Selective β1-agonist", "Selective β2-agonist", "None above"], "ans": 2}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Dopamine is act on (α1–α2) receptors.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Enteric nervous system is only own to control motor and secretory functions of intestine.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Histamine is formed from histidine by histidine carboxylase.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Isoflurophate causes:", "options": ["Mydriasis", "Miosis", "Increase breathing", "Motor stimulation", "None of the above"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Isoflurophate produces miosis.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Isoprenaline is blocked by propranolol.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Labetolol is:", "options": ["α-blocker", "β-blocker", "(a and b)", "α-agonist", "β-agonist"], "ans": 2}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "M2-receptors are blocked by:", "options": ["Pirenzepine", "Gallamine", "Pethidine", "Acetylcholine", "None of the above"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Methoxamine causes:", "options": ["Decrease blood pressure", "Increase blood pressure", "Vasodilatation", "Tremor", "(b and d)"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Phentolamine cause block of (α1–α2) receptors.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Pirenzepine is M2-blocker.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Ranitidine is used in:", "options": ["Gastric ulcer", "Cough", "Anaphylactic reaction", "Vomiting", "None of the above"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Sympathetic stimulation lead to:", "options": ["Tachycardia", "Glycolysis", "Mydriasis", "(a and c)", "All of the above"], "ans": 4}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Sympathetic system leaves CNS in thoraco-lumbar outflow.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Trimethaphan cause mydriasis.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Uptake mechanism stimulates Acetylcholine release.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Wheal is due to:", "options": ["Capillary dilatation", "Fluid exudation", "Axon reflex", "(a and b)", "None of the above"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "β-adrenergic receptors are linked as:", "options": ["Ion-channel", "G-protein", "Enzyme", "Intracellular", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Aztreonam is toxic and broad spectrum.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Benzylpenicillin is:", "options": ["Short half life", "Long half life", "Slow release", "(a and c)", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Cefamandole is:", "options": ["First generation Cephalosporin", "Third generation Cephalosporin", "Second generation Cephalosporin", "Fourth generation Cephalosporin", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Cefuroxime is good for:", "options": ["Sinusitis", "Otitis media", "Meningitis", "(a and b)", "All of the above"], "ans": 2}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Cephalosporins is synthetic antibiotic.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Chloramphenicol is not good for H-influenza.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Clarithromycin is useful in lyme disease.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Clindamycin is:", "options": ["Effective against bacteroides fragilis", "Not used for endocarditis", "Less absorption from GIT", "Only excreted by urine", "(a and d)"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Fioxacin is good for cervicitis.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Megaloplastic anemia due to trimethoprim is prevented by folic acid.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Streptomycin is good for:", "options": ["Plague", "Tularemia", "Pneumonia", "(a and b)", "None of the above"], "ans": 3}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Sulphamethoxazole is combined with:", "options": ["Co-trimoxazole", "Azapropazone", "Phenylbutazone", "Trimethoprime", "None"], "ans": 3}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Sulphasalazine is:", "options": ["Short acting", "Long acting", "GIT absorption", "(a and b)", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Sulphonamides inhibit non-competitively dihydropteorate synthase.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Tetracyclines have a very wide spectrum of activity.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Vancomycin is:", "options": ["Bacteriostatic", "Good for MRSA", "Good in endocarditis", "(b and c)", "All of the above"], "ans": 3}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Aspirin is:", "options": ["Equipotent action on both COX isoforms", "More selective on COX2", "Good for asthmatic patient", "All above", "None of the above"], "ans": 4}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Benzodiazepines are:", "options": ["Less used as anxiolytic than barbiturates", "Good orally absorption", "Less protein binding", "Antipsychotic activity", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Benzodiazepines have antipsychotic activity.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Benzodiazepines used with drugs causing sedation.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Bupivacaine is:", "options": ["Slow onset", "Short duration", "Not good in spinal anesthesia", "(a and c)", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Buspirone is:", "options": ["Sedative", "Highly addiction", "Slow onset", "All of the above", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Chlordiazepoxide is:", "options": ["Reduce opiate withdrawal symptoms", "Good for epilepsy", "Good in tetanus", "(a and c)", "All above"], "ans": 3}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Clonazepam may be used to treat panic disorder.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Dextropropoxyphene is related to:", "options": ["Phenylpiperidine series", "Methadone series", "Benzmorphan series", "Thebaine series", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Dibucaine is amide local anesthetic.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Enflurane is:", "options": ["Slow induction", "Not good for patient with renal failure", "High toxic", "(b and c)", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Etomidate may cause involuntary movement.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Excitement is:", "options": ["Stage I-anaesthesia", "Stage II-anaesthesia", "Stage III-anaesthesia", "Stage IV-anaesthesia", "None of above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Halothane is highly potent.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Heroin is converted to diamorphine.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Heroin is:", "options": ["Less active than morphine", "High lipid solubility", "Not cross BBB", "(a and b)", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Indomethacin is:", "options": ["Produce adverse effects", "Produce hallucination", "Not combined with diuretics", "(a and b)", "All of the above"], "ans": 4}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "K (kappa) receptors, responsible for analgesia in brain.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Local anesthetic injected in subarachnoid space called:", "options": ["Surface anesthesia", "Epidural anesthesia", "Spinal anesthesia", "Nerve block anesthesia", "Topical anesthesia"], "ans": 2}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Morphine causes:", "options": ["Urticaria", "Bradycardia", "Hypertension", "(a and b)", "All of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Nitrous oxide is:", "options": ["Slow onset", "Irritant", "Good analgesic", "(a and c)", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Opioid overdose is treated by naloxone.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Pentazocin is:", "options": ["Semisynthetic", "Not dose depended", "(a and b)", "Less toxicity", "None of the above"], "ans": 3}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Piroxicam is not safe in renal disease.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Procaine is:", "options": ["Long duration", "Potent", "Surface anesthetic", "Drug abuse", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Propofol is:", "options": ["Slow metabolism", "Slow recovery", "Used for outpatient surgery", "(b and c)", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Propranolol decrease plasma level of amide local anesthetic.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Prostaglandins act to:", "options": ["Inhibit pain", "Stimulate pain", "Inhibit vasodilatation", "(b and c)", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Reye's syndrome is precipitation in children with bacterial infection.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "σ (Sigma) receptors responsible for:", "options": ["Euphoria", "Analgesia", "Hallucination", "All of above", "None of above"], "ans": 2}, {"year": 2023, "topic": "Introduction", "type": "MCQ", "q": "Neurons carry signals away from CNS to peripheral tissues are:", "options": ["Afferent", "Efferent", "Ganglia", "Synaptic neurons", "Cell bodies"], "ans": 1}, {"year": 2023, "topic": "Introduction", "type": "MCQ", "q": "Transmitter release occurs by:", "options": ["Distribution", "Exocytosis", "Filtration", "Passive diffusion", "Active diffusion"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "(I.V.) Atropine used for:", "options": ["Treatment of tachycardia", "Treatment of bradycardia", "Stimulate salivary flow", "Headache", "Xerostomia"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Ach is synthesized by acetylcholinesterase.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Clonidine is a selective α2-agonist.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Cocaine causes:", "options": ["Increase blood pressure", "Decrease blood pressure", "Bradycardia", "Tachycardia", "(a and d)"], "ans": 4}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Depolarizing blocking agent is:", "options": ["Tubocurarine", "Gallamine", "Pancuronium", "Suxamethonium", "Atracurium"], "ans": 3}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Dopamine is converted to Adrenaline by dopamine β-hydroxylase.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Drug used for glaucoma and hypertension is:", "options": ["Propranolol", "Nadolol", "Timolol", "Idazoxan", "Reserpine"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Drug used in chronic management of Myasthenia gravis is:", "options": ["Physostigmine", "Neostigmine", "Pyridostigmine", "Edrophonium", "Adrenaline"], "ans": 2}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Famotidine is an H2-blocker.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Flare is redness due to arteriolar dilatation.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Inhibitory feedback mechanism mediated by:", "options": ["β1-receptors", "β2-receptors", "α1-receptors", "α2-receptors", "α1 and β1"], "ans": 3}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Labetalol is an α1-selective blocker.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "M1-receptor is:", "options": ["Excitatory", "Inhibitory", "Blocked by Pirenzepine", "(a and c)", "(a and b)"], "ans": 3}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "M3-receptors are excitatory.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Neostigmine cannot enter the CNS.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Phenylephrine is:", "options": ["Selective α1-agonist", "Selective α2-agonist", "Selective β1-agonist", "Selective β2-agonist", "Mixed α and β"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Pilocarpine is used to stimulate salivary flow.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Preganglionic cell bodies originate in the ganglion and terminate on the effector organ.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Promethazine is:", "options": ["Sedative", "Antiemetic", "Decrease tremor", "All above", "(a and b)"], "ans": 3}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Salbutamol is used to prevent premature labour.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Trimethaphan leads to a decrease in heart rate.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Wheal is due to:", "options": ["Capillary dilatation", "Capillary exudation", "Arteriolar dilatation", "Arteriolar exudation", "Gastric secretion"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Zollinger-Ellison syndrome is treated by:", "options": ["Histamine", "H1-blocker", "H2-blocker", "Opioid", "Aspirin"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "A single drug is capable of achieving general anaesthesia.", "options": ["True", "False"], "ans": 1},
+  {"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "PABA converted to folate by:", "options": ["Dihydrofolate reductase", "Dihydropteroate synthase", "Tetrahydrofolate", "DNA", "RNA"], "ans": 1},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Metronidazole is:", "options": ["Antiprotozoal", "Antiprotozoal and antibacterial", "Antiviral", "Analgesic", "Narcotic"], "ans": 1},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Doxycycline is excreted in:", "options": ["Urine", "Bile", "Milk", "GIT", "Saliva"], "ans": 3},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Imipenem is:", "options": ["Given I.M.", "Given I.V.", "Given orally", "Given S.C.", "(a and b)"], "ans": 1},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Bacteriostatic agents are:", "options": ["Increase growth of bacteria", "Arrest growth of bacteria", "Kill the bacteria", "Inhibit immunity", "Not affect bacteria"], "ans": 1},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Megaloblastic anaemia is:", "options": ["Calcium deficiency", "Iron deficiency", "Folate deficiency", "Decrease platelets synthesis", "Decrease White blood cells synthesis"], "ans": 2},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Metallic bitter taste is unwanted effect of:", "options": ["Ciprofloxacin", "Metronidazole", "Paracetamol", "Aspirin", "Penicillin"], "ans": 1},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Streptomycin is used for treatment of:", "options": ["Ototoxicity", "Endocarditis", "Tuberculosis", "Meningitis", "Skin infection"], "ans": 2},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Tetracyclines not administered with:", "options": ["Water", "Milk", "Meat", "Vegetables", "Fish"], "ans": 1},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Ceftazidime is:", "options": ["First generation Cephalosporines", "Second generation Cephalosporines", "Third generation Cephalosporines", "Fourth generation Cephalosporines", "Not Cephalosporines"], "ans": 2},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Augmentin is:", "options": ["Amoxicillin + Ampicillin", "Amoxicillin + Cloxacillin", "Amoxicillin + Clavulanic acid", "Ampicillin + Clavulanic acid", "Ampicillin + Cloxacillin"], "ans": 2},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Silversulphadiazine is used:", "options": ["Topical", "Orally", "I.V.", "I.M.", "Inhalation"], "ans": 0},
+{"year": 2023, "topic": "Antimicrobial", "type": "MCQ", "q": "Chloramphenicol act as:", "options": ["Bacteriostatic", "Bactericidal", "(a and b)", "Antiprotozoal", "Antiviral"], "ans": 2},
+
+{"year": 2023, "topic": "Antimicrobial", "type": "TF", "q": "Non-Fluorinated Quinolones have a wide spectrum of activity.", "options": ["True", "False"], "ans": 1},
+{"year": 2023, "topic": "Antimicrobial", "type": "TF", "q": "Penicillins are widely distributed in body fluids.", "options": ["True", "False"], "ans": 0},
+{"year": 2023, "topic": "Antimicrobial", "type": "TF", "q": "Aztreonam may cause Phlebitis.", "options": ["True", "False"], "ans": 0},
+{"year": 2023, "topic": "Antimicrobial", "type": "TF", "q": "Kanamycin is used only topically.", "options": ["True", "False"], "ans": 0},
+{"year": 2023, "topic": "Antimicrobial", "type": "TF", "q": "Cefotetan is a first generation Cephalosporin.", "options": ["True", "False"], "ans": 1},
+{"year": 2023, "topic": "Antimicrobial", "type": "TF", "q": "Tetracyclines have a wide spectrum of activity.", "options": ["True", "False"], "ans": 1},
+{"year": 2023, "topic": "Antimicrobial", "type": "TF", "q": "Trimethoprim is a bacteriostatic agent.", "options": ["True", "False"], "ans": 0},
+{"year": 2023, "topic": "Antimicrobial", "type": "TF", "q": "Rifampin affects cell membrane permeability.", "options": ["True", "False"], "ans": 1},
+{"year": 2023, "topic": "Antimicrobial", "type": "TF", "q": "Sulphonamides are bacteriostatic.", "options": ["True", "False"], "ans": 0},
+{"year": 2023, "topic": "Antimicrobial", "type": "TF", "q": "Trimethoprim is not combined with other drugs.", "options": ["True", "False"], "ans": 1},
+   {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Benzocaine is not used in surface anaesthesia.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Benzodiazepine antagonist is:", "options": ["Flumazenil", "Diazepam", "Midazolam", "Buspirone", "Propranolol"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Benzodiazepines have replaced Barbiturates as:", "options": ["Sedative", "Tranquilizer", "Hypnotics", "Analgesics", "Anxiolytics"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Bupivacaine is:", "options": ["Short duration", "Long duration", "Fast onset", "Used in dusting powder", "Used in surface anaesthesia"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Buspirone is related to Benzodiazepines.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Chemoreceptor trigger zone responsible for:", "options": ["Vomiting", "Euphoria", "Headache", "Analgesia", "Pain"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Craving for drug is:", "options": ["Physical dependence", "Tolerance", "Psychological dependence", "Euphoria", "Hallucination"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Deepening anaesthesia is good for surgery.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Diazepam is used to decrease opiate withdrawal symptoms.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Etorphine has very strong potency.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Halothane is highly potent.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "K (Kappa) receptors are responsible for most analgesic action.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Ketamine produces:", "options": ["Light anaesthesia", "Deep anaesthesia", "Surgical anaesthesia", "Dissociative anaesthesia", "Total anaesthesia"], "ans": 3}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Lidocaine is:", "options": ["Liver metabolism", "Slow onset", "Not widely used", "Not used with Adrenaline", "Not used in arrhythmias"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Local anaesthetic blocks the sodium channel.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Local anaesthetic is injected close to nerve trunk called:", "options": ["Surface anaesthesia", "Infiltration", "Nerve block anaesthesia", "Spinal anaesthesia", "Epidural anaesthesia"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Loperamide causes diarrhea.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Methoxyflurane does not cause respiratory depression.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Mild anxiety does not require treatment.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Miosis is an important diagnosis for opioid overdose.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Most analgesic action is due to:", "options": ["Sigma receptors", "μ (Mu) receptors", "σ (delta) receptors", "K (kappa) receptors", "Muscarinic receptors"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Nitrous oxide is:", "options": ["Very rapid onset", "Irritant", "Not analgesics", "Good muscle relaxant", "High potent"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Non steroidal anti inflammatory drugs (NSAIDs) act by:", "options": ["Stimulate prostaglandin", "Stimulate prostaglanding", "Inhibiting prostaglandin", "Inhibiting Adrenaline", "Inhibiting Ach"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Paracetamol is a strong anti-inflammatory.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Pentazocine is related to the Methadone series.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Piroxicam causes gastric damage.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Procaine is of long duration.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Propofol is used with Fentanyl.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Regular intake of paracetamol over a long period lead to:", "options": ["Blood toxicity", "Heart pain", "Kidney damage", "Hallucination", "Euphoria"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Reye's syndrome in children caused by:", "options": ["Paracetamol", "Ibuprofen", "Aspirin", "Voltaren", "Calcium"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Stage -I- anaesthesia is:", "options": ["Excitement", "Analgesia", "Surgical", "Medullary paralysis", "Coma"], "ans": 1}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "First pass effect is:", "options": ["Decrease action", "Increase action", "Decrease absorption", "Decrease toxicity"], "ans": 0}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "Grapefruit is:", "options": ["Enzyme induction", "Increase drug metabolism", "Increase action", "Enzyme inhibition"], "ans": 3}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "Intrathecal injection is:", "options": ["Access of drug to GIT", "Access of drug to CNS", "Access of drug to CVS", "Access of drug to Kidney"], "ans": 1}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "Lipophilic drugs are:", "options": ["Less absorption", "Less action", "Good distributed", "High toxicity"], "ans": 2}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "Octacaine is:", "options": ["Chemical name", "Generic name", "Official name", "Trade name"], "ans": 3}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "The main important reaction in phase-1-reaction is:", "options": ["Dehalogenation", "Hydrolysis", "Oxidation", "Reduction"], "ans": 2}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Auto-inhibitory feedback mechanism is mediated by:", "options": ["α1", "β1", "α2", "β2"], "ans": 2}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Gynaecomastia caused by:", "options": ["Cimetidine", "Ranitidine", "Famotidine", "Nizatidine"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "H2-receptor is blocked by:", "options": ["Gallamine", "Pirenzepine", "Tubocurarine", "Hexamethonium"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Isoflurophate is:", "options": ["Cause paralysis", "Cause miosis", "(A-B)", "Short duration"], "ans": 2}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Labetolol is:", "options": ["β-blocker", "α-blocker", "(A-B)", "None"], "ans": 2}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Lipolysis is mediated by:", "options": ["β3", "α1", "β1", "β2"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Loratadine is:", "options": ["H2-blocker", "H1-agonist", "H2-agonist", "H1-blocker"], "ans": 3}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Muscarinic agonist is:", "options": ["Inhibit secretion of saliva", "Cause tachycardia", "Cause mydriasis", "Treated xerostomia"], "ans": 3}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Noradrenalin is converted to adrenaline by:", "options": ["Calcium ions", "Dopamine", "Tyrosine", "None of the above"], "ans": 3}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Pheochromocytoma is management by:", "options": ["Phentolamine", "Phenoxybenzamine", "Adrenaline", "Clonidine"], "ans": 1}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Postganglionic sympathetic neurons are:", "options": ["Cholinergic", "Adrenergic", "(A-B)", "Dopaminergic"], "ans": 2}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Promethazine is:", "options": ["Sedative", "Antiemetic", "Antipruritic", "All of the above"], "ans": 3}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Trimetaphan is:", "options": ["Decrease bleeding", "Produce hypertension", "Cause diarrhea", "Increase GIT motility"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Uptake mechanism is:", "options": ["Inhibit action", "Stimulate action", "Increase transmitters release", "(A-C)"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Wheal is:", "options": ["Fluid exudation", "Capillary dilatation", "Hotness", "Arteriolar dilatation"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Zollinger-Ellison syndrome is treated by:", "options": ["Famotidine", "Cimetidine", "Antazoline", "(A-B)"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Against methicillin-resistance staphylococci can use:", "options": ["Cefepime", "Ceftazidime", "Penicillin", "Amoxil"], "ans": 0}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Aminoglycosides are:", "options": ["Amikacine", "Gentamycine", "(A-B)", "Chloramphenicol"], "ans": 2}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Amoxicillin combined with clavulanic acid is:", "options": ["Ampicillin", "Cephalosporine", "Clavulanic acid", "Augmentin"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Chloramphenicol is:", "options": ["Cause headache", "Given to neonates", "Cause gray baby syndrome", "(A-C)"], "ans": 2}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Clarithromycin is:", "options": ["Like erythromycin effect", "Good for leprosy", "Good for Lyme disease", "All of the above"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Doxycycline is:", "options": ["Excreted in bile", "Excreted in urine", "Excreted in sweat", "Excreted in GIT"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "First generation cephalosporins are:", "options": ["Cephapirin", "Cephalothin", "Cephadroxil", "All of the above"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Norfloxacin is used for:", "options": ["Cervicites", "Complicated UTI", "Chlamidia", "Legionella"], "ans": 1}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Sulfonamides given with:", "options": ["Lidocaine", "Prilocaine", "Propranolol", "Procaine"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Sulphamethopyrazine is:", "options": ["Good GIT absorption", "Good water soluble", "Long action", "All of the above"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Sulphapyridine combined with salicylate is:", "options": ["Pyrimethamine", "Sulphasalazine", "Co-trimoxazole", "Sulphadiazine"], "ans": 1}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Trimethoprim is:", "options": ["Weak acid", "Not given with folic acid", "Less tissue distributed", "Good GIT absorption"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Tuberculosis treated by:", "options": ["Kanamycin", "Gentamycin", "Aspirin", "Streptomycin"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Vancomycin is:", "options": ["Antimetabolites", "Inhibit protein synthesis", "Inhibit nucleic acid metabolism", "Inhibit cell wall synthesis"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Vancomycin is:", "options": ["Bactericidal", "Bacteriostatic", "(A-B)", "Given alone"], "ans": 0}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Vestibular disturbances produced by:", "options": ["Aspirin", "Doxycycline", "Minocycline", "None of the above"], "ans": 2}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Amide local anesthetic is:", "options": ["Cocaine", "Lidocaine", "Tetracaine", "Benzocaine"], "ans": 1}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Aspirin is:", "options": ["Act on Cox1", "Act on both Cox", "Act on Cox2", "Not act on Cox"], "ans": 1}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Atracurium is:", "options": ["Reversible by cholinesterase", "Depolarizing blocker", "Not cause paralysis", "Non-depolarizing"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Benzodiazepines are:", "options": ["Inhibit allergy", "Decrease anxiety", "Inhibit vomiting", "Inhibit headache"], "ans": 1}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Craving is:", "options": ["Dependence", "Euphoria", "Tolerance", "Nausea"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Diclofenac is:", "options": ["Potent analgesic", "Weak analgesic", "Antiplatelets aggregation", "Less toxic"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Etorphine is related to:", "options": ["Thebaine", "Benzomorphan", "Methadone", "Phenyl piperidine series"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Excitement is:", "options": ["Stage-I anesthesia", "Stage III anesthesia", "Stage IV anesthesia", "Stage-II anesthesia"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Flumazenil is:", "options": ["Parentrally", "Orally", "Agonist action", "Treat Leprosy"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Halothane is:", "options": ["Widely used", "Weak", "Irritant", "Explosive"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Ketamine is produce:", "options": ["Dissociative anesthesia", "Surgical anesthesia", "Light anesthesia", "Total IV anesthesia"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Laughing gas is:", "options": ["Halothane", "Enflurane", "Nitrous oxide", "Thiopentone"], "ans": 2}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Most NSAIDs are:", "options": ["Weak acids", "Weak bases", "Urine excretion", "(A-C)"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Most analgesic action of opioid produced by:", "options": ["δ receptor", "κ receptor", "σ receptor", "μ receptor"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "NSAIDs produce:", "options": ["Increase Adrenaline", "Decrease Acetylcholine", "Decrease Prostaglandins", "Decrease Dopamine"], "ans": 2}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Opioid causes:", "options": ["Diarrhea", "Hypertension", "Cough", "Constipation"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Opioid overdose is diagnosis by:", "options": ["Mydriasis", "Vomiting", "Miosis", "Headache"], "ans": 2}]</script>
+  <script>
     (() => {
-      "use strict";
+      'use strict';
+      const QUESTIONS = JSON.parse(document.getElementById('questions-data').textContent);
+      const YEARS = [...new Set(QUESTIONS.map(q => q.year))].sort((a,b)=>a-b);
+      const TOPIC_ORDER = ['Introduction', 'ANS', 'Antimicrobial', 'Opioid'];
+      const LABELS = ['A','B','C','D','E'];
 
-      // Keep your existing questionsDB here.
-      // The app below is refactored to support it without changing the data schema.
-      const questionsDB = [{"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Toxicology is the branch of pharmacology that deals with:", "options": ["Side effects", "Adverse effects", "Elimination", "Pharmacological action", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Acetaminophen is:", "options": ["Generic name", "Trade name", "Chemical name", "Scientific name", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Migraine is:", "options": ["Decrease distribution", "Increase metabolism", "Decrease absorption", "Increase absorption", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Oral route is safe due to:", "options": ["Fast absorption", "Fast metabolism", "Slow elimination", "Slow absorption", "None of the above"], "ans": 3}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Haemolysis may occur by:", "options": ["Slow injection", "Intermediate injection", "Rapid injection", "All of the above", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Intraperitoneal injection commonly used in:", "options": ["Human study", "Animal study", "(a and b)", "Pediatrics", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "First-pass metabolism is:", "options": ["Decrease bioavailability", "Increase bioavailability", "Not affect bioavailability", "Increase pharmacological action", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "In some cases metabolic reactions generate:", "options": ["More polar metabolites", "Inactive metabolites", "Toxic effects", "All of the above", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Glucuronidation is the most common:", "options": ["Phase-I reaction", "Phase-II metabolism", "Phase-III metabolism", "All above", "None above"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Competition between drugs for the carrier lead to:", "options": ["Increase action", "Increase absorption", "Drug-drug interaction", "(a and c)", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Maximal response of drug is:", "options": ["Potency", "ED50", "LD50", "Efficacy", "None of the above"], "ans": 3}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Isoprenaline is competitively antagonized by:", "options": ["Aspirin", "Panadol", "Acetoprolol", "Verapamil", "None of the above"], "ans": 4}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Peripheral neuropathy is related to:", "options": ["Slow acetylation", "Intermediate acetylation", "Fast acetylation", "None above", "All above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Grapefruit inhibit most of microsomal enzymes and lead to:", "options": ["Decrease metabolism", "Increase metabolism", "Flushing", "All of above", "None of the above"], "ans": 4}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Warfarin is:", "options": ["Increase bleed with tyramine", "Decrease bleed with phenylbutazone", "Decrease bleed with aspirin", "Increase bleed with azapropazone", "None of the above"], "ans": 3}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Adverse or beneficial interaction is:", "options": ["Different", "Similar", "Mixed", "All of the above", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Metoclopramide is:", "options": ["Reduce Digoxin absorption", "Reduce Propantheline absorption", "Increase Digoxin absorption", "All of the above", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Neomycin causes:", "options": ["Malabsorption syndrome", "Decrease GIT motility", "Delays gastric emptying", "All of the above", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Dichlophenazone is:", "options": ["Increase warfarine activity", "Decrease warfarine activity", "Decrease aspirin activity", "(b and c)", "None"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Probenecid reduces:", "options": ["Excretion of Paracetamol", "Excretion of Penicillin", "Absorption of Penicillin", "All of above", "None above"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Hypnosedatives are:", "options": ["Decrease alcohol action", "Increase Prostaglandins", "Increase alcohol action", "Alcohol antagonist", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Thiazide diuretics:", "options": ["Rise lithium plasma levels", "Inhibit lithium plasma levels", "Not affect lithium", "All of above", "None above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "MCQ", "q": "Propantheline is:", "options": ["Decrease Paracetamol absorption", "Increase Paracetamol absorption", "Decrease aspirin absorption", "All of the above", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "If in doubt, don't give the drugs together.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Conversion of acetylated metabolite to acetyl hydralazine lead to nephrotoxicity.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Different pharmacological response to the same concentration is pharmacodynamic deviation.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Potency is effective dose response.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Below a minimum threshold, no effect.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Many hydrophobic drugs conjugates (particularly glucuronide).", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Binding drugs are not readily filtered through glomerulus.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Dehalogenation is the most common conjugation reaction.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Renal excretion of changed drugs plays only a modest role in overall elimination.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Albumin bind mainly acidic drugs.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Bioequivalence is similar bioavailability.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Inhalation can produce rapid local effect.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "First pass metabolism mainly limit efficacy.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Migraine causes gastric stasis.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Adol is generic name.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Introduction", "type": "TF", "q": "Aspirin is synthetic compound.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "β-adrenergic receptors are linked as:", "options": ["Ion-channel", "G-protein", "Enzyme", "Intracellular", "None of the above"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Sympathetic stimulation lead to:", "options": ["Tachycardia", "Glycolysis", "Mydriasis", "(a and c)", "All of the above"], "ans": 4}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "M2-receptors are blocked by:", "options": ["Pirenzepine", "Gallamine", "Pethidine", "Acetylcholine", "None of the above"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Atropine is antidote to:", "options": ["Cholinesterases", "Adrenaline", "Histamine", "All of above", "None of above"], "ans": 4}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Isoflurophate causes:", "options": ["Mydriasis", "Miosis", "Increase breathing", "Motor stimulation", "None of the above"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Methoxamine causes:", "options": ["Decrease blood pressure", "Increase blood pressure", "Vasodilatation", "Tremor", "(b and d)"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Dobutamine is:", "options": ["Selective α1-agonist", "Selective α2-agonist", "Selective β1-agonist", "Selective β2-agonist", "None above"], "ans": 2}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Clonidine is:", "options": ["Prevent premature labour", "Used for hypotension", "Prolonged local anaesthesia", "None of above", "All of above"], "ans": 3}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Labetolol is:", "options": ["α-blocker", "β-blocker", "(a and b)", "α-agonist", "β-agonist"], "ans": 2}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Wheal is due to:", "options": ["Capillary dilatation", "Fluid exudation", "Axon reflex", "(a and b)", "None of the above"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "MCQ", "q": "Ranitidine is used in:", "options": ["Gastric ulcer", "Cough", "Anaphylactic reaction", "Vomiting", "None of the above"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Cimetidine is cause impotence in males.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Histamine is formed from histidine by histidine carboxylase.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Phentolamine cause block of (α1–α2) receptors.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Dopamine is act on (α1–α2) receptors.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Trimethaphan cause mydriasis.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Isoflurophate produces miosis.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Pirenzepine is M2-blocker.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Uptake mechanism stimulates Acetylcholine release.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Enteric nervous system is only own to control motor and secretory functions of intestine.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Sympathetic system leaves CNS in thoraco-lumbar outflow.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "ANS", "type": "TF", "q": "Isoprenaline is blocked by propranolol.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Sulphasalazine is:", "options": ["Short acting", "Long acting", "GIT absorption", "(a and b)", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Benzylpenicillin is:", "options": ["Short half life", "Long half life", "Slow release", "(a and c)", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Cefamandole is:", "options": ["First generation Cephalosporin", "Third generation Cephalosporin", "Second generation Cephalosporin", "Fourth generation Cephalosporin", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Cefuroxime is good for:", "options": ["Sinusitis", "Otitis media", "Meningitis", "(a and b)", "All of the above"], "ans": 2}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Vancomycin is:", "options": ["Bacteriostatic", "Good for MRSA", "Good in endocarditis", "(b and c)", "All of the above"], "ans": 3}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Streptomycin is good for:", "options": ["Plague", "Tularemia", "Pneumonia", "(a and b)", "None of the above"], "ans": 3}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Clindamycin is:", "options": ["Effective against bacteroides fragilis", "Not used for endocarditis", "Less absorption from GIT", "Only excreted by urine", "(a and d)"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "MCQ", "q": "Sulphamethoxazole is combined with:", "options": ["Co-trimoxazole", "Azapropazone", "Phenylbutazone", "Trimethoprime", "None"], "ans": 3}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Fioxacin is good for cervicitis.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Clarithromycin is useful in lyme disease.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Chloramphenicol is not good for H-influenza.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Tetracyclines have a very wide spectrum of activity.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Aztreonam is toxic and broad spectrum.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Cephalosporins is synthetic antibiotic.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Megaloplastic anemia due to trimethoprim is prevented by folic acid.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Antimicrobial", "type": "TF", "q": "Sulphonamides inhibit non-competitively dihydropteorate synthase.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Dextropropoxyphene is related to:", "options": ["Phenylpiperidine series", "Methadone series", "Benzmorphan series", "Thebaine series", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "σ (Sigma) receptors responsible for:", "options": ["Euphoria", "Analgesia", "Hallucination", "All of above", "None of above"], "ans": 2}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Morphine causes:", "options": ["Urticaria", "Bradycardia", "Hypertension", "(a and b)", "All of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Heroin is:", "options": ["Less active than morphine", "High lipid solubility", "Not cross BBB", "(a and b)", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Pentazocin is:", "options": ["Semisynthetic", "Not dose depended", "(a and b)", "Less toxicity", "None of the above"], "ans": 3}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Prostaglandins act to:", "options": ["Inhibit pain", "Stimulate pain", "Inhibit vasodilatation", "(b and c)", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Aspirin is:", "options": ["Equipotent action on both COX isoforms", "More selective on COX2", "Good for asthmatic patient", "All above", "None of the above"], "ans": 4}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Indomethacin is:", "options": ["Produce adverse effects", "Produce hallucination", "Not combined with diuretics", "(a and b)", "All of the above"], "ans": 4}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Excitement is:", "options": ["Stage I-anaesthesia", "Stage II-anaesthesia", "Stage III-anaesthesia", "Stage IV-anaesthesia", "None of above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Nitrous oxide is:", "options": ["Slow onset", "Irritant", "Good analgesic", "(a and c)", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Enflurane is:", "options": ["Slow induction", "Not good for patient with renal failure", "High toxic", "(b and c)", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Propofol is:", "options": ["Slow metabolism", "Slow recovery", "Used for outpatient surgery", "(b and c)", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Local anesthetic injected in subarachnoid space called:", "options": ["Surface anesthesia", "Epidural anesthesia", "Spinal anesthesia", "Nerve block anesthesia", "Topical anesthesia"], "ans": 2}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Procaine is:", "options": ["Long duration", "Potent", "Surface anesthetic", "Drug abuse", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Bupivacaine is:", "options": ["Slow onset", "Short duration", "Not good in spinal anesthesia", "(a and c)", "None of the above"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Benzodiazepines are:", "options": ["Less used as anxiolytic than barbiturates", "Good orally absorption", "Less protein binding", "Antipsychotic activity", "None of the above"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Chlordiazepoxide is:", "options": ["Reduce opiate withdrawal symptoms", "Good for epilepsy", "Good in tetanus", "(a and c)", "All above"], "ans": 3}, {"year": 2022, "topic": "Opioid", "type": "MCQ", "q": "Buspirone is:", "options": ["Sedative", "Highly addiction", "Slow onset", "All of the above", "None of the above"], "ans": 2}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Benzodiazepines used with drugs causing sedation.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Clonazepam may be used to treat panic disorder.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Benzodiazepines have antipsychotic activity.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Propranolol decrease plasma level of amide local anesthetic.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Dibucaine is amide local anesthetic.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Etomidate may cause involuntary movement.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Halothane is highly potent.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Piroxicam is not safe in renal disease.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Reye's syndrome is precipitation in children with bacterial infection.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Opioid overdose is treated by naloxone.", "options": ["True", "False"], "ans": 0}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "Heroin is converted to diamorphine.", "options": ["True", "False"], "ans": 1}, {"year": 2022, "topic": "Opioid", "type": "TF", "q": "K (kappa) receptors, responsible for analgesia in brain.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Introduction", "type": "MCQ", "q": "Transmitter release occurs by:", "options": ["Distribution", "Exocytosis", "Filtration", "Passive diffusion", "Active diffusion"], "ans": 1}, {"year": 2023, "topic": "Introduction", "type": "MCQ", "q": "Neurons carry signals away from CNS to peripheral tissues are:", "options": ["Afferent", "Efferent", "Ganglia", "Synaptic neurons", "Cell bodies"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Inhibitory feedback mechanism mediated by:", "options": ["β1-receptors", "β2-receptors", "α1-receptors", "α2-receptors", "α1 and β1"], "ans": 3}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Zollinger-Ellison syndrome is treated by:", "options": ["Histamine", "H1-blocker", "H2-blocker", "Opioid", "Aspirin"], "ans": 2}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Drug used for glaucoma and hypertension is:", "options": ["Propranolol", "Nadolol", "Timolol", "Idazoxan", "Reserpine"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Depolarizing blocking agent is:", "options": ["Tubocurarine", "Gallamine", "Pancuronium", "Suxamethonium", "Atracurium"], "ans": 3}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "(I.V.) Atropine used for:", "options": ["Treatment of tachycardia", "Treatment of bradycardia", "Stimulate salivary flow", "Headache", "Xerostomia"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Drug used in chronic management of Myasthenia gravis is:", "options": ["Physostigmine", "Neostigmine", "Pyridostigmine", "Edrophonium", "Adrenaline"], "ans": 2}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "M1-receptor is:", "options": ["Excitatory", "Inhibitory", "Blocked by Pirenzepine", "(a and c)", "(a and b)"], "ans": 3}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Cocaine causes:", "options": ["Increase blood pressure", "Decrease blood pressure", "Bradycardia", "Tachycardia", "(a and d)"], "ans": 4}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Phenylephrine is:", "options": ["Selective α1-agonist", "Selective α2-agonist", "Selective β1-agonist", "Selective β2-agonist", "Mixed α and β"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Promethazine is:", "options": ["Sedative", "Antiemetic", "Decrease tremor", "All above", "(a and b)"], "ans": 3}, {"year": 2023, "topic": "ANS", "type": "MCQ", "q": "Wheal is due to:", "options": ["Capillary dilatation", "Capillary exudation", "Arteriolar dilatation", "Arteriolar exudation", "Gastric secretion"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Salbutamol is used to prevent premature labour.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Flare is redness due to arteriolar dilatation.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Trimethaphan leads to a decrease in heart rate.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Preganglionic cell bodies originate in the ganglion and terminate on the effector organ.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "M3-receptors are excitatory.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Pilocarpine is used to stimulate salivary flow.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Neostigmine cannot enter the CNS.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Dopamine is converted to Adrenaline by dopamine β-hydroxylase.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Clonidine is a selective α2-agonist.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Labetalol is an α1-selective blocker.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Famotidine is an H2-blocker.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "ANS", "type": "TF", "q": "Ach is synthesized by acetylcholinesterase.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Regular intake of paracetamol over a long period lead to:", "options": ["Blood toxicity", "Heart pain", "Kidney damage", "Hallucination", "Euphoria"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Craving for drug is:", "options": ["Physical dependence", "Tolerance", "Psychological dependence", "Euphoria", "Hallucination"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Most analgesic action is due to:", "options": ["Sigma receptors", "μ (Mu) receptors", "σ (delta) receptors", "K (kappa) receptors", "Muscarinic receptors"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Benzodiazepine antagonist is:", "options": ["Flumazenil", "Diazepam", "Midazolam", "Buspirone", "Propranolol"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Bupivacaine is:", "options": ["Short duration", "Long duration", "Fast onset", "Used in dusting powder", "Used in surface anaesthesia"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Lidocaine is:", "options": ["Liver metabolism", "Slow onset", "Not widely used", "Not used with Adrenaline", "Not used in arrhythmias"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Local anaesthetic is injected close to nerve trunk called:", "options": ["Surface anaesthesia", "Infiltration", "Nerve block anaesthesia", "Spinal anaesthesia", "Epidural anaesthesia"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Nitrous oxide is:", "options": ["Very rapid onset", "Irritant", "Not analgesics", "Good muscle relaxant", "High potent"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Stage -I- anaesthesia is:", "options": ["Excitement", "Analgesia", "Surgical", "Medullary paralysis", "Coma"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Reye's syndrome in children caused by:", "options": ["Paracetamol", "Ibuprofen", "Aspirin", "Voltaren", "Calcium"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Non steroidal anti inflammatory drugs (NSAIDs) act by:", "options": ["Stimulate prostaglandin", "Stimulate prostaglanding", "Inhibiting prostaglandin", "Inhibiting Adrenaline", "Inhibiting Ach"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Chemoreceptor trigger zone responsible for:", "options": ["Vomiting", "Euphoria", "Headache", "Analgesia", "Pain"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Benzodiazepines have replaced Barbiturates as:", "options": ["Sedative", "Tranquilizer", "Hypnotics", "Analgesics", "Anxiolytics"], "ans": 2}, {"year": 2023, "topic": "Opioid", "type": "MCQ", "q": "Ketamine produces:", "options": ["Light anaesthesia", "Deep anaesthesia", "Surgical anaesthesia", "Dissociative anaesthesia", "Total anaesthesia"], "ans": 3}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Halothane is highly potent.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Benzocaine is not used in surface anaesthesia.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Mild anxiety does not require treatment.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Loperamide causes diarrhea.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Paracetamol is a strong anti-inflammatory.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "K (Kappa) receptors are responsible for most analgesic action.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Etorphine has very strong potency.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Methoxyflurane does not cause respiratory depression.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Pentazocine is related to the Methadone series.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Miosis is an important diagnosis for opioid overdose.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Piroxicam causes gastric damage.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Deepening anaesthesia is good for surgery.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Procaine is of long duration.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Buspirone is related to Benzodiazepines.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "A single drug is capable of achieving general anaesthesia.", "options": ["True", "False"], "ans": 1}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Local anaesthetic blocks the sodium channel.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Propofol is used with Fentanyl.", "options": ["True", "False"], "ans": 0}, {"year": 2023, "topic": "Opioid", "type": "TF", "q": "Diazepam is used to decrease opiate withdrawal symptoms.", "options": ["True", "False"], "ans": 0}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "Octacaine is:", "options": ["Chemical name", "Generic name", "Official name", "Trade name"], "ans": 3}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "First pass effect is:", "options": ["Decrease action", "Increase action", "Decrease absorption", "Decrease toxicity"], "ans": 0}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "Intrathecal injection is:", "options": ["Access of drug to GIT", "Access of drug to CNS", "Access of drug to CVS", "Access of drug to Kidney"], "ans": 1}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "Lipophilic drugs are:", "options": ["Less absorption", "Less action", "Good distributed", "High toxicity"], "ans": 2}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "The main important reaction in phase-1-reaction is:", "options": ["Dehalogenation", "Hydrolysis", "Oxidation", "Reduction"], "ans": 2}, {"year": 2024, "topic": "Introduction", "type": "MCQ", "q": "Grapefruit is:", "options": ["Enzyme induction", "Increase drug metabolism", "Increase action", "Enzyme inhibition"], "ans": 3}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Pheochromocytoma is management by:", "options": ["Phentolamine", "Phenoxybenzamine", "Adrenaline", "Clonidine"], "ans": 1}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Wheal is:", "options": ["Fluid exudation", "Capillary dilatation", "Hotness", "Arteriolar dilatation"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Promethazine is:", "options": ["Sedative", "Antiemetic", "Antipruritic", "All of the above"], "ans": 3}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Postganglionic sympathetic neurons are:", "options": ["Cholinergic", "Adrenergic", "(A-B)", "Dopaminergic"], "ans": 2}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Uptake mechanism is:", "options": ["Inhibit action", "Stimulate action", "Increase transmitters release", "(A-C)"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Labetolol is:", "options": ["β-blocker", "α-blocker", "(A-B)", "None"], "ans": 2}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Loratadine is:", "options": ["H2-blocker", "H1-agonist", "H2-agonist", "H1-blocker"], "ans": 3}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "H2-receptor is blocked by:", "options": ["Gallamine", "Pirenzepine", "Tubocurarine", "Hexamethonium"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Muscarinic agonist is:", "options": ["Inhibit secretion of saliva", "Cause tachycardia", "Cause mydriasis", "Treated xerostomia"], "ans": 3}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Isoflurophate is:", "options": ["Cause paralysis", "Cause miosis", "(A-B)", "Short duration"], "ans": 2}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Trimetaphan is:", "options": ["Decrease bleeding", "Produce hypertension", "Cause diarrhea", "Increase GIT motility"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Noradrenalin is converted to adrenaline by:", "options": ["Calcium ions", "Dopamine", "Tyrosine", "None of the above"], "ans": 3}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Auto-inhibitory feedback mechanism is mediated by:", "options": ["α1", "β1", "α2", "β2"], "ans": 2}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Lipolysis is mediated by:", "options": ["β3", "α1", "β1", "β2"], "ans": 0}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Zollinger-Ellison syndrome is treated by:", "options": ["Famotidine", "Cimetidine", "Antazoline", "(A-B)"], "ans": 3}, {"year": 2024, "topic": "ANS", "type": "MCQ", "q": "Gynaecomastia caused by:", "options": ["Cimetidine", "Ranitidine", "Famotidine", "Nizatidine"], "ans": 0}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Vancomycin is:", "options": ["Antimetabolites", "Inhibit protein synthesis", "Inhibit nucleic acid metabolism", "Inhibit cell wall synthesis"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Sulphamethopyrazine is:", "options": ["Good GIT absorption", "Good water soluble", "Long action", "All of the above"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Sulphapyridine combined with salicylate is:", "options": ["Pyrimethamine", "Sulphasalazine", "Co-trimoxazole", "Sulphadiazine"], "ans": 1}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Trimethoprim is:", "options": ["Weak acid", "Not given with folic acid", "Less tissue distributed", "Good GIT absorption"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Amoxicillin combined with clavulanic acid is:", "options": ["Ampicillin", "Cephalosporine", "Clavulanic acid", "Augmentin"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "First generation cephalosporins are:", "options": ["Cephapirin", "Cephalothin", "Cephadroxil", "All of the above"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Against methicillin-resistance staphylococci can use:", "options": ["Cefepime", "Ceftazidime", "Penicillin", "Amoxil"], "ans": 0}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Vancomycin is:", "options": ["Bactericidal", "Bacteriostatic", "(A-B)", "Given alone"], "ans": 0}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Doxycycline is:", "options": ["Excreted in bile", "Excreted in urine", "Excreted in sweat", "Excreted in GIT"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Aminoglycosides are:", "options": ["Amikacine", "Gentamycine", "(A-B)", "Chloramphenicol"], "ans": 2}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Tuberculosis treated by:", "options": ["Kanamycin", "Gentamycin", "Aspirin", "Streptomycin"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Clarithromycin is:", "options": ["Like erythromycin effect", "Good for leprosy", "Good for Lyme disease", "All of the above"], "ans": 3}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Norfloxacin is used for:", "options": ["Cervicites", "Complicated UTI", "Chlamidia", "Legionella"], "ans": 1}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Chloramphenicol is:", "options": ["Cause headache", "Given to neonates", "Cause gray baby syndrome", "(A-C)"], "ans": 2}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Vestibular disturbances produced by:", "options": ["Aspirin", "Doxycycline", "Minocycline", "None of the above"], "ans": 2}, {"year": 2024, "topic": "Antimicrobial", "type": "MCQ", "q": "Sulfonamides given with:", "options": ["Lidocaine", "Prilocaine", "Propranolol", "Procaine"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Most analgesic action of opioid produced by:", "options": ["δ receptor", "κ receptor", "σ receptor", "μ receptor"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Opioid overdose is diagnosis by:", "options": ["Mydriasis", "Vomiting", "Miosis", "Headache"], "ans": 2}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Opioid causes:", "options": ["Diarrhea", "Hypertension", "Cough", "Constipation"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Craving is:", "options": ["Dependence", "Euphoria", "Tolerance", "Nausea"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "NSAIDs produce:", "options": ["Increase Adrenaline", "Decrease Acetylcholine", "Decrease Prostaglandins", "Decrease Dopamine"], "ans": 2}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Most NSAIDs are:", "options": ["Weak acids", "Weak bases", "Urine excretion", "(A-C)"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Aspirin is:", "options": ["Act on Cox1", "Act on both Cox", "Act on Cox2", "Not act on Cox"], "ans": 1}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Diclofenac is:", "options": ["Potent analgesic", "Weak analgesic", "Antiplatelets aggregation", "Less toxic"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Benzodiazepines are:", "options": ["Inhibit allergy", "Decrease anxiety", "Inhibit vomiting", "Inhibit headache"], "ans": 1}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Excitement is:", "options": ["Stage-I anesthesia", "Stage III anesthesia", "Stage IV anesthesia", "Stage-II anesthesia"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Halothane is:", "options": ["Widely used", "Weak", "Irritant", "Explosive"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Laughing gas is:", "options": ["Halothane", "Enflurane", "Nitrous oxide", "Thiopentone"], "ans": 2}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Ketamine is produce:", "options": ["Dissociative anesthesia", "Surgical anesthesia", "Light anesthesia", "Total IV anesthesia"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Amide local anesthetic is:", "options": ["Cocaine", "Lidocaine", "Tetracaine", "Benzocaine"], "ans": 1}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Flumazenil is:", "options": ["Parentrally", "Orally", "Agonist action", "Treat Leprosy"], "ans": 0}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Atracurium is:", "options": ["Reversible by cholinesterase", "Depolarizing blocker", "Not cause paralysis", "Non-depolarizing"], "ans": 3}, {"year": 2024, "topic": "Opioid", "type": "MCQ", "q": "Etorphine is related to:", "options": ["Thebaine", "Benzomorphan", "Methadone", "Phenyl piperidine series"], "ans": 0}];const topicsByYear = {
-        2022: ["Introduction", "ANS", "Antimicrobial", "Opioid"],
-        2023: ["Introduction", "ANS", "Opioid"],
-        2024: ["Introduction", "ANS", "Antimicrobial", "Opioid"]
-      };
-
-      const els = {
-        homeView: document.getElementById("homeView"),
-        quizView: document.getElementById("quizView"),
-        studyView: document.getElementById("studyView"),
-        resultsView: document.getElementById("resultsView"),
-        yearGrid: document.getElementById("yearGrid"),
-        topicModal: document.getElementById("topicModal"),
-        navigatorModal: document.getElementById("navigatorModal"),
-        topicList: document.getElementById("topicList"),
-        navGrid: document.getElementById("navGrid"),
-        searchInput: document.getElementById("searchInput"),
-        quizModeBtn: document.getElementById("quizModeBtn"),
-        studyModeBtn: document.getElementById("studyModeBtn"),
-        shuffleBtn: document.getElementById("shuffleBtn"),
-        bookmarkListBtn: document.getElementById("bookmarkListBtn"),
-        wrongListBtn: document.getElementById("wrongListBtn"),
-        themeBtn: document.getElementById("themeBtn"),
-        homeBtn: document.getElementById("homeBtn"),
-        quizTitle: document.getElementById("quizTitle"),
-        quizSubTitle: document.getElementById("quizSubTitle"),
-        quizTimer: document.getElementById("quizTimer"),
-        quizCounter: document.getElementById("quizCounter"),
-        quizProgress: document.getElementById("quizProgress"),
-        quizProgressBar: document.getElementById("quizProgressBar"),
-        questionText: document.getElementById("questionText"),
-        optionsGrid: document.getElementById("optionsGrid"),
-        notesInput: document.getElementById("notesInput"),
-        prevBtn: document.getElementById("prevBtn"),
-        nextBtn: document.getElementById("nextBtn"),
-        notesBtn: document.getElementById("notesBtn"),
-        flagBtn: document.getElementById("flagBtn"),
-        saveBtn: document.getElementById("saveBtn"),
-        navBtn: document.getElementById("navBtn"),
-        studyTitle: document.getElementById("studyTitle"),
-        studyList: document.getElementById("studyList"),
-        copyAllBtn: document.getElementById("copyAllBtn"),
-        exportPdfBtn: document.getElementById("exportPdfBtn"),
-        resultScore: document.getElementById("resultScore"),
-        resultTime: document.getElementById("resultTime"),
-        goHomeFromResultsBtn: document.getElementById("goHomeFromResultsBtn"),
-        reviewWrongBtn: document.getElementById("reviewWrongBtn"),
-        closeTopicModalBtn: document.getElementById("closeTopicModalBtn"),
-        closeNavigatorModalBtn: document.getElementById("closeNavigatorModalBtn")
+      const el = {
+        homeView: document.getElementById('homeView'),
+        quizView: document.getElementById('quizView'),
+        studyView: document.getElementById('studyView'),
+        resultsView: document.getElementById('resultsView'),
+        yearGrid: document.getElementById('yearGrid'),
+        topicModal: document.getElementById('topicModal'),
+        navigatorModal: document.getElementById('navigatorModal'),
+        topicList: document.getElementById('topicList'),
+        navGrid: document.getElementById('navGrid'),
+        searchInput: document.getElementById('searchInput'),
+        quizModeBtn: document.getElementById('quizModeBtn'),
+        studyModeBtn: document.getElementById('studyModeBtn'),
+        shuffleBtn: document.getElementById('shuffleBtn'),
+        bookmarkListBtn: document.getElementById('bookmarkListBtn'),
+        wrongListBtn: document.getElementById('wrongListBtn'),
+        themeBtn: document.getElementById('themeBtn'),
+        homeBtn: document.getElementById('homeBtn'),
+        quizTitle: document.getElementById('quizTitle'),
+        quizSubTitle: document.getElementById('quizSubTitle'),
+        quizTimer: document.getElementById('quizTimer'),
+        quizCounter: document.getElementById('quizCounter'),
+        quizProgress: document.getElementById('quizProgress'),
+        quizProgressBar: document.getElementById('quizProgressBar'),
+        questionText: document.getElementById('questionText'),
+        optionsGrid: document.getElementById('optionsGrid'),
+        notesInput: document.getElementById('notesInput'),
+        prevBtn: document.getElementById('prevBtn'),
+        nextBtn: document.getElementById('nextBtn'),
+        notesBtn: document.getElementById('notesBtn'),
+        flagBtn: document.getElementById('flagBtn'),
+        saveBtn: document.getElementById('saveBtn'),
+        navBtn: document.getElementById('navBtn'),
+        studyTitle: document.getElementById('studyTitle'),
+        studyList: document.getElementById('studyList'),
+        copyAllBtn: document.getElementById('copyAllBtn'),
+        exportPdfBtn: document.getElementById('exportPdfBtn'),
+        resultScore: document.getElementById('resultScore'),
+        resultTime: document.getElementById('resultTime'),
+        goHomeFromResultsBtn: document.getElementById('goHomeFromResultsBtn'),
+        reviewWrongBtn: document.getElementById('reviewWrongBtn'),
+        showResultsBtn: document.getElementById('showResultsBtn'),
+        closeTopicModalBtn: document.getElementById('closeTopicModalBtn'),
+        closeNavigatorModalBtn: document.getElementById('closeNavigatorModalBtn'),
       };
 
       const state = {
-        mode: "quiz",
-        currentQuestions: [],
+        mode: 'quiz',
         sessionQuestions: [],
         currentIndex: 0,
         score: 0,
@@ -1090,120 +367,70 @@
         timer: null,
         answers: {},
         flags: new Set(),
-        bookmarks: loadJSON("pharmaBookmarks", []),
+        bookmarks: loadJSON('pharmaBookmarks', []),
         wrongAnswers: [],
-        currentSessionLabel: "",
+        currentLabel: '',
         notesVisible: false,
-        filters: {
-          search: ""
-        }
+        search: '',
       };
 
-      const labels = ["A", "B", "C", "D", "E"];
-
       function loadJSON(key, fallback) {
-        try {
-          const raw = localStorage.getItem(key);
-          return raw ? JSON.parse(raw) : fallback;
-        } catch {
-          return fallback;
-        }
+        try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch { return fallback; }
       }
-
-      function saveJSON(key, value) {
-        localStorage.setItem(key, JSON.stringify(value));
-      }
-
-      function $(selector, root = document) {
-        return root.querySelector(selector);
-      }
-
-      function escapeHTML(str = "") {
-        return String(str)
-          .replaceAll("&", "&amp;")
-          .replaceAll("<", "&lt;")
-          .replaceAll(">", "&gt;")
-          .replaceAll('"', "&quot;")
-          .replaceAll("'", "&#39;");
-      }
-
-      function fmtTime(totalSeconds) {
-        const m = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
-        const s = String(totalSeconds % 60).padStart(2, "0");
-        return `${m}:${s}`;
-      }
-
-      function stopTimer() {
-        if (state.timer) {
-          clearInterval(state.timer);
-          state.timer = null;
-        }
-      }
-
+      function saveJSON(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+      function fmtTime(sec) { return String(Math.floor(sec / 60)).padStart(2,'0') + ':' + String(sec % 60).padStart(2,'0'); }
+      function stopTimer() { if (state.timer) clearInterval(state.timer); state.timer = null; }
       function startTimer() {
         stopTimer();
-        state.timer = window.setInterval(() => {
-          state.secondsElapsed += 1;
-          els.quizTimer.innerHTML = `<i class="fa-regular fa-clock"></i> ${fmtTime(state.secondsElapsed)}`;
+        state.timer = setInterval(() => {
+          state.secondsElapsed++;
+          el.quizTimer.innerHTML = `<i class="fa-regular fa-clock"></i> ${fmtTime(state.secondsElapsed)}`;
         }, 1000);
       }
 
       function setTheme(theme) {
-        document.body.dataset.theme = theme === "dark" ? "dark" : "";
-        localStorage.setItem("pharmaTheme", theme);
-        els.themeBtn.innerHTML = theme === "dark"
+        document.body.dataset.theme = theme === 'dark' ? 'dark' : '';
+        localStorage.setItem('pharmaTheme', theme);
+        el.themeBtn.innerHTML = theme === 'dark'
           ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
           : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
       }
+      function initTheme() { setTheme(localStorage.getItem('pharmaTheme') === 'dark' ? 'dark' : 'light'); }
 
-      function initTheme() {
-        setTheme(localStorage.getItem("pharmaTheme") === "dark" ? "dark" : "light");
+      function setView(view) {
+        [el.homeView, el.quizView, el.studyView, el.resultsView].forEach(v => v.classList.remove('is-active'));
+        view.classList.add('is-active');
       }
 
+      function toggleModal(modal, open) {
+        modal.classList.toggle('is-open', open);
+        modal.setAttribute('aria-hidden', String(!open));
+        document.body.classList.toggle('no-scroll', open);
+      }
+      function openModal(modal) { toggleModal(modal, true); }
+      function closeModal(modal) { toggleModal(modal, false); }
+
       function buildHome() {
-        const yearCards = [2022, 2023, 2024].map((year) => {
-          const qCount = questionsDB.filter(q => q.year === year).length;
-          const topics = topicsByYear[year].join(" · ");
+        el.yearGrid.innerHTML = YEARS.map(year => {
+          const count = QUESTIONS.filter(q => q.year === year).length;
+          const topics = TOPIC_ORDER.filter(t => QUESTIONS.some(q => q.year === year && q.topic === t));
           return `
             <button class="year-card" type="button" data-year="${year}" aria-label="Open ${year} questions">
               <div class="year-card__top">
                 <div class="year-card__icon"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></div>
                 <div>
                   <h2>${year} Questions</h2>
-                  <p>${qCount} questions</p>
+                  <p>${count} questions</p>
                 </div>
               </div>
-              <p>${topics}</p>
-            </button>
-          `;
-        }).join("");
-
-        els.yearGrid.innerHTML = yearCards;
+              <p>${topics.join(' · ')}</p>
+            </button>`;
+        }).join('');
       }
 
-      function showView(view) {
-        [els.homeView, els.quizView, els.studyView, els.resultsView].forEach(el => el.classList.remove("is-active"));
-        view.classList.add("is-active");
-      }
-
-      function enableSessionControls(enabled) {
-        els.searchInput.disabled = !enabled || state.mode !== "study";
-        els.shuffleBtn.disabled = !enabled;
-      }
-
-      function openModal(modal) {
-        modal.classList.add("is-open");
-        modal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("no-scroll");
-      }
-
-      function closeModal(modal) {
-        modal.classList.remove("is-open");
-        modal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("no-scroll");
-      }
-
-      function resetSessionState() {
+      function startSession(label, questions) {
+        state.currentLabel = label;
+        state.sessionQuestions = [...questions];
         state.currentIndex = 0;
         state.score = 0;
         state.secondsElapsed = 0;
@@ -1211,467 +438,348 @@
         state.flags = new Set();
         state.wrongAnswers = [];
         state.notesVisible = false;
-        els.notesInput.classList.remove("is-visible");
-        els.notesInput.value = "";
-        els.quizTimer.innerHTML = `<i class="fa-regular fa-clock"></i> 00:00`;
-        els.quizProgress.style.width = "0%";
-        els.quizProgressBar.setAttribute("aria-valuenow", "0");
-      }
-
-      function startSession({ label, questions }) {
-        state.currentQuestions = [...questions];
-        state.sessionQuestions = [...questions];
-        state.currentSessionLabel = label;
-        resetSessionState();
-        els.quizTitle.textContent = label;
-        els.studyTitle.textContent = label;
-        els.quizSubTitle.textContent = `${state.sessionQuestions.length} questions ready`;
-        enableSessionControls(true);
-        showView(state.mode === "quiz" ? els.quizView : els.studyView);
-        if (state.mode === "quiz") {
-          startTimer();
-          renderQuestion();
-        } else {
-          renderStudyList();
-        }
+        el.notesInput.classList.remove('is-visible');
+        el.notesInput.value = '';
+        el.quizTitle.textContent = label;
+        el.studyTitle.textContent = label;
+        el.quizSubTitle.textContent = `${state.sessionQuestions.length} questions ready`;
+        el.searchInput.disabled = state.mode !== 'study';
+        el.shuffleBtn.disabled = false;
+        el.quizTimer.innerHTML = '<i class="fa-regular fa-clock"></i> 00:00';
+        el.quizProgress.style.width = '0%';
+        el.quizProgressBar.setAttribute('aria-valuenow', '0');
+        setView(state.mode === 'quiz' ? el.quizView : el.studyView);
+        if (state.mode === 'quiz') { startTimer(); renderQuestion(); } else { stopTimer(); renderStudyList(); }
       }
 
       function openTopicSelector(year) {
-        els.topicList.innerHTML = "";
-        els.topicModal.setAttribute("aria-labelledby", "topicModalTitle");
-        document.getElementById("topicModalTitle").textContent = `Select Topic (${year})`;
+        const topics = TOPIC_ORDER.filter(t => QUESTIONS.some(q => q.year === year && q.topic === t));
+        document.getElementById('topicModalTitle').textContent = `Select Topic (${year})`;
+        const allCount = QUESTIONS.filter(q => q.year === year).length;
+        el.topicList.innerHTML = `<button class="topic-item" type="button" data-year="${year}" data-topic="ALL">
+                    <span>All Questions</span><span class="pill">${allCount} Qs</span>
+                  </button>` + topics.map(topic => {
+          const count = QUESTIONS.filter(q => q.year === year && q.topic === topic).length;
+          return `<button class="topic-item" type="button" data-year="${year}" data-topic="${topic}">
+                    <span>${topic}</span><span class="pill">${count} Qs</span>
+                  </button>`;
+        }).join('');
+        openModal(el.topicModal);
+      }
 
-        const fragment = document.createDocumentFragment();
-        topicsByYear[year].forEach(topic => {
-          const count = questionsDB.filter(q => q.year === year && q.topic === topic).length;
-          const button = document.createElement("button");
-          button.type = "button";
-          button.className = "topic-item";
-          button.innerHTML = `<span>${escapeHTML(topic)}</span><span class="pill">${count} Qs</span>`;
-          button.addEventListener("click", () => {
-            closeModal(els.topicModal);
-            const questions = questionsDB.filter(q => q.year === year && q.topic === topic);
-            startSession({ label: `${year} – ${topic}`, questions });
-          });
-          fragment.appendChild(button);
-        });
-
-        els.topicList.appendChild(fragment);
-        openModal(els.topicModal);
+      function updateModeButtons() {
+        el.quizModeBtn.classList.toggle('is-active', state.mode === 'quiz');
+        el.studyModeBtn.classList.toggle('is-active', state.mode === 'study');
+        el.quizModeBtn.setAttribute('aria-selected', String(state.mode === 'quiz'));
+        el.studyModeBtn.setAttribute('aria-selected', String(state.mode === 'study'));
       }
 
       function setMode(mode) {
         state.mode = mode;
-        els.quizModeBtn.classList.toggle("is-active", mode === "quiz");
-        els.quizModeBtn.setAttribute("aria-selected", String(mode === "quiz"));
-        els.studyModeBtn.classList.toggle("is-active", mode === "study");
-        els.studyModeBtn.setAttribute("aria-selected", String(mode === "study"));
-        els.searchInput.disabled = !(mode === "study" && state.sessionQuestions.length > 0);
-
-        if (state.sessionQuestions.length) {
-          if (mode === "quiz") {
-            stopTimer();
-            startTimer();
-            showView(els.quizView);
-            renderQuestion();
-          } else {
-            stopTimer();
-            showView(els.studyView);
-            renderStudyList();
-            els.searchInput.value = state.filters.search;
-          }
-        } else {
-          showView(els.homeView);
-        }
-      }
-
-      function toggleTheme() {
-        setTheme(document.body.dataset.theme === "dark" ? "light" : "dark");
-      }
-
-      function setButtonStateForQuestion(q) {
-        const isFlagged = state.flags.has(q.id);
-        const isBookmarked = state.bookmarks.includes(q.id);
-        els.flagBtn.innerHTML = isFlagged
-          ? '<i class="fa-solid fa-flag" aria-hidden="true"></i>'
-          : '<i class="fa-regular fa-flag" aria-hidden="true"></i>';
-        els.saveBtn.innerHTML = isBookmarked
-          ? '<i class="fa-solid fa-bookmark" aria-hidden="true"></i>'
-          : '<i class="fa-regular fa-bookmark" aria-hidden="true"></i>';
-        els.flagBtn.style.color = isFlagged ? "var(--warning)" : "";
-        els.saveBtn.style.color = isBookmarked ? "var(--primary)" : "";
-      }
-
-      function renderQuestion() {
-        const q = state.sessionQuestions[state.currentIndex];
-        if (!q) return;
-
-        els.quizCounter.textContent = `${state.currentIndex + 1} / ${state.sessionQuestions.length}`;
-        const progress = ((state.currentIndex) / state.sessionQuestions.length) * 100;
-        els.quizProgress.style.width = `${progress}%`;
-        els.quizProgressBar.setAttribute("aria-valuenow", String(Math.round(progress)));
-        els.questionText.textContent = `${state.currentIndex + 1}. ${q.q}`;
-
-        const fragment = document.createDocumentFragment();
-        q.options.forEach((opt, idx) => {
-          const btn = document.createElement("button");
-          btn.type = "button";
-          btn.className = "option";
-          btn.dataset.index = String(idx);
-          btn.innerHTML = `<span class="option__key">${labels[idx] || String(idx + 1)}</span><span>${escapeHTML(opt)}</span>`;
-          btn.addEventListener("click", () => selectAnswer(idx));
-          fragment.appendChild(btn);
-        });
-        els.optionsGrid.innerHTML = "";
-        els.optionsGrid.appendChild(fragment);
-
-        const noteKey = `note_${q.id}`;
-        els.notesInput.value = localStorage.getItem(noteKey) || "";
-        els.notesInput.classList.toggle("is-visible", state.notesVisible);
-        setButtonStateForQuestion(q);
-        updateAnsweredUI();
-        updateNavState();
-      }
-
-      function updateAnsweredUI() {
-        const q = state.sessionQuestions[state.currentIndex];
-        const selected = state.answers[q.id];
-        const optionButtons = [...els.optionsGrid.querySelectorAll(".option")];
-        optionButtons.forEach(btn => (btn.disabled = selected !== undefined));
-
-        if (selected === undefined) {
-          els.nextBtn.disabled = false;
+        updateModeButtons();
+        el.searchInput.disabled = !(mode === 'study' && state.sessionQuestions.length);
+        if (!state.sessionQuestions.length) {
+          setView(el.homeView);
           return;
         }
-
-        if (selected === q.ans) {
-          optionButtons[selected]?.classList.add("is-correct");
-        } else {
-          optionButtons[selected]?.classList.add("is-wrong");
-          optionButtons[q.ans]?.classList.add("is-correct");
-        }
+        stopTimer();
+        if (mode === 'quiz') { setView(el.quizView); startTimer(); renderQuestion(); }
+        else { setView(el.studyView); renderStudyList(); }
       }
 
-      function selectAnswer(index) {
-        const q = state.sessionQuestions[state.currentIndex];
-        if (!q || state.answers[q.id] !== undefined) return;
+      function currentQuestion() { return state.sessionQuestions[state.currentIndex]; }
 
-        state.answers[q.id] = index;
-        if (index === q.ans) {
-          state.score += 1;
-        } else if (!state.wrongAnswers.some(item => item.id === q.id)) {
-          state.wrongAnswers.push(q);
-        }
+      function renderQuestion() {
+        const q = currentQuestion();
+        if (!q) return;
+        el.quizCounter.textContent = `${state.currentIndex + 1} / ${state.sessionQuestions.length}`;
+        el.quizProgress.style.width = `${(state.currentIndex / state.sessionQuestions.length) * 100}%`;
+        el.quizProgressBar.setAttribute('aria-valuenow', String(Math.round((state.currentIndex / state.sessionQuestions.length) * 100)));
+        el.questionText.textContent = `${state.currentIndex + 1}. ${q.q}`;
+        el.optionsGrid.innerHTML = q.options.map((opt, i) => `
+          <button class="option" type="button" data-i="${i}">
+            <span class="option__key">${LABELS[i] || i + 1}</span>
+            <span>${escapeHTML(opt)}</span>
+          </button>`).join('');
+        const savedNote = localStorage.getItem(`note_${q.year}_${q.topic}_${state.currentIndex}`) || '';
+        el.notesInput.value = savedNote;
+        el.notesInput.classList.toggle('is-visible', state.notesVisible);
+        syncQuestionUI();
+      }
 
-        updateAnsweredUI();
-        const progress = ((state.currentIndex + 1) / state.sessionQuestions.length) * 100;
-        els.quizProgress.style.width = `${progress}%`;
-        els.quizProgressBar.setAttribute("aria-valuenow", String(Math.round(progress)));
-        updateNavState();
+      function escapeHTML(str) {
+        return String(str)
+          .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#39;");
+      }
+
+      function syncQuestionUI() {
+        const q = currentQuestion();
+        if (!q) return;
+        el.flagBtn.style.color = state.flags.has(qKey(q)) ? 'var(--warning)' : '';
+        el.saveBtn.style.color = state.bookmarks.includes(qKey(q)) ? 'var(--primary)' : '';
+        el.flagBtn.innerHTML = state.flags.has(qKey(q)) ? '<i class="fa-solid fa-flag" aria-hidden="true"></i>' : '<i class="fa-regular fa-flag" aria-hidden="true"></i>';
+        el.saveBtn.innerHTML = state.bookmarks.includes(qKey(q)) ? '<i class="fa-solid fa-bookmark" aria-hidden="true"></i>' : '<i class="fa-regular fa-bookmark" aria-hidden="true"></i>';
+
+        const selected = state.answers[qKey(q)];
+        [...el.optionsGrid.querySelectorAll('.option')].forEach((btn, i) => {
+          btn.disabled = selected !== undefined;
+          btn.classList.remove('is-correct', 'is-wrong');
+          if (selected !== undefined) {
+            if (i === q.ans) btn.classList.add('is-correct');
+            if (i === selected && selected !== q.ans) btn.classList.add('is-wrong');
+          }
+        });
+      }
+
+      function qKey(q) { return `${q.year}_${q.topic}_${q.q}`; }
+
+      function selectAnswer(i) {
+        const q = currentQuestion();
+        if (!q) return;
+        const key = qKey(q);
+        if (state.answers[key] !== undefined) return;
+        state.answers[key] = i;
+        if (i === q.ans) state.score++;
+        else if (!state.wrongAnswers.some(x => qKey(x) === key)) state.wrongAnswers.push(q);
+        syncQuestionUI();
+        el.quizProgress.style.width = `${((state.currentIndex + 1) / state.sessionQuestions.length) * 100}%`;
+        el.quizProgressBar.setAttribute('aria-valuenow', String(Math.round(((state.currentIndex + 1) / state.sessionQuestions.length) * 100)));
+        updateNavigatorState();
       }
 
       function nextQuestion() {
         if (state.currentIndex < state.sessionQuestions.length - 1) {
-          state.currentIndex += 1;
+          state.currentIndex++;
           renderQuestion();
-          els.notesInput.classList.toggle("is-visible", state.notesVisible);
-          return;
+        } else {
+          finishQuiz();
         }
-        finishQuiz();
       }
 
       function prevQuestion() {
         if (state.currentIndex > 0) {
-          state.currentIndex -= 1;
+          state.currentIndex--;
           renderQuestion();
-          els.notesInput.classList.toggle("is-visible", state.notesVisible);
         }
       }
 
       function finishQuiz() {
         stopTimer();
-        showView(els.resultsView);
-        els.resultScore.textContent = `${state.score}/${state.sessionQuestions.length}`;
-        els.resultTime.textContent = fmtTime(state.secondsElapsed);
-        els.searchInput.disabled = true;
-        els.shuffleBtn.disabled = true;
+        el.resultScore.textContent = `${state.score}/${state.sessionQuestions.length}`;
+        el.resultTime.textContent = fmtTime(state.secondsElapsed);
+        setView(el.resultsView);
       }
 
       function toggleNotes() {
         state.notesVisible = !state.notesVisible;
-        els.notesInput.classList.toggle("is-visible", state.notesVisible);
-        if (state.notesVisible && window.innerWidth > 900) {
-          requestAnimationFrame(() => els.notesInput.focus({ preventScroll: true }));
-        }
-      }
-
-      function currentQuestion() {
-        return state.sessionQuestions[state.currentIndex];
+        el.notesInput.classList.toggle('is-visible', state.notesVisible);
+        if (state.notesVisible && window.innerWidth > 900) el.notesInput.focus({ preventScroll: true });
       }
 
       function toggleFlag() {
-        const q = currentQuestion();
-        if (!q) return;
-        if (state.flags.has(q.id)) state.flags.delete(q.id);
-        else state.flags.add(q.id);
-        setButtonStateForQuestion(q);
-        updateNavState();
+        const q = currentQuestion(); if (!q) return;
+        const key = qKey(q);
+        state.flags.has(key) ? state.flags.delete(key) : state.flags.add(key);
+        syncQuestionUI(); updateNavigatorState();
       }
 
       function toggleBookmark() {
-        const q = currentQuestion();
-        if (!q) return;
-        if (state.bookmarks.includes(q.id)) {
-          state.bookmarks = state.bookmarks.filter(id => id !== q.id);
-        } else {
-          state.bookmarks = [...state.bookmarks, q.id];
-        }
-        saveJSON("pharmaBookmarks", state.bookmarks);
-        setButtonStateForQuestion(q);
+        const q = currentQuestion(); if (!q) return;
+        const key = qKey(q);
+        state.bookmarks = state.bookmarks.includes(key) ? state.bookmarks.filter(x => x !== key) : [...state.bookmarks, key];
+        saveJSON('pharmaBookmarks', state.bookmarks);
+        syncQuestionUI();
       }
 
-      function toggleShuffle() {
+      function shuffleSession() {
         state.sessionQuestions = [...state.sessionQuestions].sort(() => Math.random() - 0.5);
-        renderQuestion();
-        renderStudyList();
+        renderQuestion(); renderStudyList();
       }
 
-      function normalizeSearch(str) {
-        return String(str).toLowerCase().trim();
-      }
-
-      function renderStudyList(list = state.sessionQuestions) {
-        const term = normalizeSearch(state.filters.search);
-        const filtered = term
-          ? list.filter(q =>
-              normalizeSearch(q.q).includes(term) ||
-              q.options.some(opt => normalizeSearch(opt).includes(term))
-            )
-          : list;
-
-        const fragment = document.createDocumentFragment();
-        filtered.forEach((q, index) => {
-          const article = document.createElement("article");
-          article.className = "study-card glass";
-          const optionsHTML = q.options.map((opt, idx) => `
-            <div class="study-option ${idx === q.ans ? "is-answer" : ""}">
-              <strong>${labels[idx] || String(idx + 1)}.</strong> ${escapeHTML(opt)}
+      function renderStudyList() {
+        const term = state.search.trim().toLowerCase();
+        const list = term ? state.sessionQuestions.filter(q => q.q.toLowerCase().includes(term) || q.options.some(o => o.toLowerCase().includes(term))) : state.sessionQuestions;
+        el.studyList.innerHTML = list.map((q, idx) => `
+          <article class="study-card glass">
+            <h3 class="question" style="margin-bottom:.85rem;">${idx + 1}. ${escapeHTML(q.q)}</h3>
+            <div class="study-options">
+              ${q.options.map((opt, i) => `<div class="study-option ${i===q.ans ? 'is-answer' : ''}"><strong>${LABELS[i] || i+1}.</strong> ${escapeHTML(opt)}</div>`).join('')}
             </div>
-          `).join("");
-
-          article.innerHTML = `
-            <h3 class="question" style="margin-bottom:.85rem;">${index + 1}. ${escapeHTML(q.q)}</h3>
-            <div class="study-options">${optionsHTML}</div>
             <div class="study-actions" style="margin-top:1rem;">
-              <button class="text-btn" type="button" data-copy-id="${q.id}"><i class="fa-regular fa-copy" aria-hidden="true"></i> Copy</button>
-              <button class="text-btn" type="button" data-share-id="${q.id}"><i class="fa-brands fa-telegram" aria-hidden="true"></i> Share</button>
+              <button class="text-btn" type="button" data-copy="${qKey(q)}"><i class="fa-regular fa-copy" aria-hidden="true"></i> Copy</button>
+              <button class="text-btn" type="button" data-share="${qKey(q)}"><i class="fa-brands fa-telegram" aria-hidden="true"></i> Share</button>
             </div>
-          `;
-          fragment.appendChild(article);
-        });
-
-        els.studyList.innerHTML = "";
-        els.studyList.appendChild(fragment);
+          </article>
+        `).join('');
       }
 
-      function updateNavState() {
-        if (!els.navGrid.childElementCount) return;
-        [...els.navGrid.children].forEach((btn, i) => {
+      function updateNavigatorState() {
+        [...el.navGrid.children].forEach((btn, i) => {
           const q = state.sessionQuestions[i];
           if (!q) return;
-          btn.className = "nav-box";
-          if (i === state.currentIndex) btn.classList.add("is-current");
-          if (state.flags.has(q.id)) btn.classList.add("is-flagged");
-          if (state.answers[q.id] !== undefined) {
-            btn.classList.add(state.answers[q.id] === q.ans ? "is-answered" : "is-wrong");
-          }
+          btn.className = 'nav-box';
+          if (i === state.currentIndex) btn.classList.add('is-current');
+          const key = qKey(q);
+          if (state.flags.has(key)) btn.classList.add('is-flagged');
+          if (state.answers[key] !== undefined) btn.classList.add(state.answers[key] === q.ans ? 'is-answered' : 'is-wrong');
         });
       }
 
       function openNavigator() {
-        const fragment = document.createDocumentFragment();
-        state.sessionQuestions.forEach((q, i) => {
-          const btn = document.createElement("button");
-          btn.type = "button";
-          btn.className = "nav-box";
-          btn.textContent = String(i + 1);
-          btn.addEventListener("click", () => {
-            state.currentIndex = i;
-            renderQuestion();
-            closeModal(els.navigatorModal);
-          });
-          fragment.appendChild(btn);
-        });
-
-        els.navGrid.innerHTML = "";
-        els.navGrid.appendChild(fragment);
-        updateNavState();
-        openModal(els.navigatorModal);
+        el.navGrid.innerHTML = state.sessionQuestions.map((q, i) => `<button class="nav-box" type="button" data-nav="${i}">${i + 1}</button>`).join('');
+        updateNavigatorState();
+        openModal(el.navigatorModal);
       }
 
       function openBookmarks() {
-        const bookmarked = questionsDB.filter(q => state.bookmarks.includes(q.id));
-        if (!bookmarked.length) return toast("No bookmarks saved yet.");
-        startSession({ label: "Bookmarks", questions: bookmarked });
+        const items = QUESTIONS.filter(q => state.bookmarks.includes(qKey(q)));
+        if (!items.length) return;
+        startSession('Bookmarks', items);
       }
 
       function openWrongAnswers() {
-        if (!state.wrongAnswers.length) return toast("No wrong answers in this session.");
-        startSession({ label: "Mistakes", questions: state.wrongAnswers });
+        if (!state.wrongAnswers.length) return;
+        const mistakes = [...state.wrongAnswers];
+        startSession('Mistakes Re-Quiz', mistakes);
       }
 
       async function copyText(text) {
-        try {
-          await navigator.clipboard.writeText(text);
-          toast("Copied to clipboard.");
-        } catch {
-          toast("Copy failed.");
-        }
+        try { await navigator.clipboard.writeText(text); } catch {}
       }
 
-      function copyQuestion(qId) {
-        const q = state.sessionQuestions.find(item => item.id === qId);
-        if (!q) return;
+      function copyQuestion(key) {
+        const q = state.sessionQuestions.find(x => qKey(x) === key); if (!q) return;
         let text = `${q.q}\n`;
-        q.options.forEach((opt, idx) => {
-          text += `${labels[idx] || idx + 1}. ${opt}${idx === q.ans ? " (Correct)" : ""}\n`;
-        });
+        q.options.forEach((opt, i) => text += `${LABELS[i] || i + 1}. ${opt}${i === q.ans ? ' (Correct)' : ''}\n`);
         copyText(text);
       }
 
-      function shareTelegram(qId) {
-        const q = state.sessionQuestions.find(item => item.id === qId);
-        if (!q) return;
-        let text = `🧠 Pharma Question\n\n${q.q}\n\n`;
-        q.options.forEach((opt, idx) => {
-          text += `${labels[idx] || idx + 1}. ${opt}\n`;
-        });
-        text += `\n✅ Answer: ${labels[q.ans] || q.ans + 1}`;
-        const url = `https://t.me/share/url?url=${encodeURIComponent("https://t.me/ti_6idz")}&text=${encodeURIComponent(text)}`;
-        window.open(url, "_blank", "noopener,noreferrer");
+      function shareQuestion(key) {
+        const q = state.sessionQuestions.find(x => qKey(x) === key); if (!q) return;
+        const text = `${q.q}\n\n${q.options.map((opt, i) => `${LABELS[i] || i + 1}. ${opt}`).join('\n')}\n\nAnswer: ${LABELS[q.ans]}`;
+        window.open(`https://t.me/share/url?url=${encodeURIComponent('https://t.me/ti_6idz')}&text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
       }
 
       function copyAllStudy() {
-        const qList = state.sessionQuestions.map((q, i) => {
-          const options = q.options.map((opt, idx) => `${labels[idx] || idx + 1}. ${opt}${idx === q.ans ? " [✅]" : ""}`).join("\n");
-          return `${i + 1}. ${q.q}\n${options}`;
-        }).join("\n\n");
-        copyText(`${state.studyTitle?.textContent || state.currentSessionLabel}\n\n${qList}`);
+        const text = state.sessionQuestions.map((q, i) => `${i + 1}. ${q.q}\n${q.options.map((opt, idx) => `${LABELS[idx] || idx + 1}. ${opt}${idx===q.ans ? ' [✅]' : ''}`).join('\n')}`).join('\n\n');
+        copyText(text);
       }
 
-      function exportPDF() {
-        window.print();
-      }
-
-      function toast(message) {
-        // Keep UX lightweight: native alert only as fallback-free minimal feedback.
-        // Replace with a non-blocking toast system if you want richer polish.
-        window.setTimeout(() => {
-          console.log(message);
-        }, 0);
-      }
-
+      function exportPDF() { window.print(); }
       function goHome() {
         stopTimer();
         state.sessionQuestions = [];
-        state.currentQuestions = [];
         state.currentIndex = 0;
         state.answers = {};
         state.flags = new Set();
         state.wrongAnswers = [];
-        state.notesVisible = false;
-        state.filters.search = "";
-        els.searchInput.value = "";
-        els.searchInput.disabled = true;
-        els.shuffleBtn.disabled = true;
-        els.quizSubTitle.textContent = "Choose a year and topic to start";
-        showView(els.homeView);
+        state.search = '';
+        el.searchInput.value = '';
+        el.searchInput.disabled = true;
+        el.shuffleBtn.disabled = true;
+        el.quizSubTitle.textContent = 'Choose a year and topic to start';
+        setView(el.homeView);
       }
 
-      function bindEvents() {
-        els.homeBtn.addEventListener("click", goHome);
-        els.quizModeBtn.addEventListener("click", () => setMode("quiz"));
-        els.studyModeBtn.addEventListener("click", () => setMode("study"));
-        els.shuffleBtn.addEventListener("click", toggleShuffle);
-        els.bookmarkListBtn.addEventListener("click", openBookmarks);
-        els.wrongListBtn.addEventListener("click", openWrongAnswers);
-        els.themeBtn.addEventListener("click", toggleTheme);
-        els.prevBtn.addEventListener("click", prevQuestion);
-        els.nextBtn.addEventListener("click", nextQuestion);
-        els.notesBtn.addEventListener("click", toggleNotes);
-        els.flagBtn.addEventListener("click", toggleFlag);
-        els.saveBtn.addEventListener("click", toggleBookmark);
-        els.navBtn.addEventListener("click", openNavigator);
-        els.copyAllBtn.addEventListener("click", copyAllStudy);
-        els.exportPdfBtn.addEventListener("click", exportPDF);
-        els.goHomeFromResultsBtn.addEventListener("click", goHome);
-        els.reviewWrongBtn.addEventListener("click", openWrongAnswers);
-        els.closeTopicModalBtn.addEventListener("click", () => closeModal(els.topicModal));
-        els.closeNavigatorModalBtn.addEventListener("click", () => closeModal(els.navigatorModal));
 
-        document.addEventListener("click", (e) => {
-          const yearCard = e.target.closest(".year-card");
-          if (yearCard) {
-            const year = Number(yearCard.dataset.year);
-            openTopicSelector(year);
+      function showDetailedResults() {
+        if (!state.sessionQuestions.length) return;
+        state.mode = 'study';
+        updateModeButtons();
+        setView(el.studyView);
+        el.studyTitle.textContent = `${state.currentLabel} – Answer Review`;
+        el.studyList.innerHTML = state.sessionQuestions.map((q, idx) => {
+          const userAns = state.answers[qKey(q)];
+          return `
+          <article class="study-card glass">
+            <h3 class="question">${idx + 1}. ${escapeHTML(q.q)}</h3>
+            <p class="helper">Your answer: ${userAns !== undefined ? LABELS[userAns] : 'Not answered'} ${userAns === q.ans ? '✅' : '❌'} | Correct: ${LABELS[q.ans]}</p>
+            <div class="study-options">
+              ${q.options.map((opt, i) => `<div class="study-option ${i===q.ans ? 'is-answer' : ''}">${LABELS[i]}. ${escapeHTML(opt)}</div>`).join('')}
+            </div>
+          </article>`;
+        }).join('');
+      }
+
+      function bind() {
+        el.homeBtn.addEventListener('click', goHome);
+        el.quizModeBtn.addEventListener('click', () => setMode('quiz'));
+        el.studyModeBtn.addEventListener('click', () => setMode('study'));
+        el.shuffleBtn.addEventListener('click', shuffleSession);
+        el.bookmarkListBtn.addEventListener('click', openBookmarks);
+        el.wrongListBtn.addEventListener('click', openWrongAnswers);
+        el.themeBtn.addEventListener('click', () => setTheme(document.body.dataset.theme === 'dark' ? 'light' : 'dark'));
+        el.prevBtn.addEventListener('click', prevQuestion);
+        el.nextBtn.addEventListener('click', nextQuestion);
+        el.notesBtn.addEventListener('click', toggleNotes);
+        el.flagBtn.addEventListener('click', toggleFlag);
+        el.saveBtn.addEventListener('click', toggleBookmark);
+        el.navBtn.addEventListener('click', openNavigator);
+        el.copyAllBtn.addEventListener('click', copyAllStudy);
+        el.exportPdfBtn.addEventListener('click', exportPDF);
+        el.goHomeFromResultsBtn.addEventListener('click', goHome);
+        el.reviewWrongBtn.addEventListener('click', openWrongAnswers);
+        el.showResultsBtn.addEventListener('click', showDetailedResults);
+        el.closeTopicModalBtn.addEventListener('click', () => closeModal(el.topicModal));
+        el.closeNavigatorModalBtn.addEventListener('click', () => closeModal(el.navigatorModal));
+        el.searchInput.addEventListener('input', e => { state.search = e.target.value; if (state.mode === 'study') renderStudyList(); });
+        el.notesInput.addEventListener('input', () => {
+          const q = currentQuestion(); if (!q) return;
+          localStorage.setItem(`note_${q.year}_${q.topic}_${state.currentIndex}`, el.notesInput.value);
+        });
+        document.addEventListener('click', e => {
+          const yearCard = e.target.closest('.year-card');
+          if (yearCard) return openTopicSelector(Number(yearCard.dataset.year));
+          const topicItem = e.target.closest('.topic-item');
+          if (topicItem) {
+            const year = Number(topicItem.dataset.year);
+            const topic = topicItem.dataset.topic;
+            closeModal(el.topicModal);
+            const selectedQuestions = topic === 'ALL'
+              ? QUESTIONS.filter(q => q.year === year)
+              : QUESTIONS.filter(q => q.year === year && q.topic === topic);
+            startSession(topic === 'ALL' ? `${year} – All Questions` : `${year} – ${topic}`, selectedQuestions);
             return;
           }
-
-          const copyBtn = e.target.closest("[data-copy-id]");
-          if (copyBtn) {
-            copyQuestion(copyBtn.dataset.copyId);
+          const nav = e.target.closest('[data-nav]');
+          if (nav) {
+            state.currentIndex = Number(nav.dataset.nav);
+            renderQuestion();
+            closeModal(el.navigatorModal);
             return;
           }
-
-          const shareBtn = e.target.closest("[data-share-id]");
-          if (shareBtn) {
-            shareTelegram(shareBtn.dataset.shareId);
-            return;
-          }
-
-          if (e.target === els.topicModal) closeModal(els.topicModal);
-          if (e.target === els.navigatorModal) closeModal(els.navigatorModal);
+          const copyBtn = e.target.closest('[data-copy]');
+          if (copyBtn) return copyQuestion(copyBtn.dataset.copy);
+          const shareBtn = e.target.closest('[data-share]');
+          if (shareBtn) return shareQuestion(shareBtn.dataset.share);
+          if (e.target === el.topicModal) closeModal(el.topicModal);
+          if (e.target === el.navigatorModal) closeModal(el.navigatorModal);
         });
-
-        els.searchInput.addEventListener("input", (e) => {
-          state.filters.search = e.target.value;
-          if (state.mode === "study") renderStudyList();
-        });
-
-        els.notesInput.addEventListener("input", () => {
-          const q = currentQuestion();
-          if (!q) return;
-          localStorage.setItem(`note_${q.id}`, els.notesInput.value);
-        });
-
-        document.addEventListener("keydown", (e) => {
-          const tag = (e.target && e.target.tagName || "").toUpperCase();
-          if (["INPUT", "TEXTAREA", "SELECT"].includes(tag)) return;
-          if (e.key === "Escape") {
-            closeModal(els.topicModal);
-            closeModal(els.navigatorModal);
-          }
-          if (state.sessionQuestions.length && els.quizView.classList.contains("is-active")) {
-            if (e.key === "ArrowRight") nextQuestion();
-            if (e.key === "ArrowLeft") prevQuestion();
-            if (e.key.toLowerCase() === "g") openNavigator();
-            if (e.key.toLowerCase() === "f") toggleFlag();
-            if (e.key.toLowerCase() === "s") toggleBookmark();
-            const map = { a: 0, b: 1, c: 2, d: 3, e: 4 };
-            const idx = map[e.key.toLowerCase()];
-            if (idx !== undefined) selectAnswer(idx);
-          }
+        document.addEventListener('keydown', e => {
+          const tag = (e.target && e.target.tagName || '').toUpperCase();
+          if (['INPUT','TEXTAREA','SELECT'].includes(tag)) return;
+          if (e.key === 'Escape') { closeModal(el.topicModal); closeModal(el.navigatorModal); }
+          if (!state.sessionQuestions.length) return;
+          if (e.key === 'ArrowRight' && state.mode === 'quiz') nextQuestion();
+          if (e.key === 'ArrowLeft' && state.mode === 'quiz') prevQuestion();
+          if (e.key.toLowerCase() === 'g') openNavigator();
+          if (e.key.toLowerCase() === 'f') toggleFlag();
+          if (e.key.toLowerCase() === 's') toggleBookmark();
+          const map = {a:0,b:1,c:2,d:3,e:4};
+          const idx = map[e.key.toLowerCase()];
+          if (idx !== undefined && state.mode === 'quiz') selectAnswer(idx);
         });
       }
 
       function init() {
         initTheme();
         buildHome();
-        bindEvents();
+        bind();
         goHome();
       }
-
       init();
     })();
-  </script></body>
+  </script>
+</body>
 </html>
+/html>
